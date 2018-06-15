@@ -65,17 +65,25 @@
         "__id__": 10
       },
       {
+<<<<<<< HEAD
         "__id__": 22
       },
       {
         "__id__": 24
+=======
+        "__id__": 11
+>>>>>>> master
       }
     ],
     "_tag": -1,
     "_active": true,
     "_components": [
       {
+<<<<<<< HEAD
         "__id__": 28
+=======
+        "__id__": 13
+>>>>>>> master
       }
     ],
     "_prefab": null,
@@ -175,7 +183,11 @@
       "__id__": 3
     },
     "_enabled": true,
-    "isGameEnd": false
+    "collisionEnabled": false,
+    "isGameEnd": false,
+    "gameEndEvent": [],
+    "GameTimer": 0,
+    "GameScore": 0
   },
   {
     "__type__": "cc.Node",
@@ -379,12 +391,64 @@
   {
     "__type__": "cc.Node",
     "_name": "SceneObject",
+<<<<<<< HEAD
+=======
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_tag": -1,
+    "_active": true,
+    "_components": [],
+    "_prefab": null,
+    "_id": "c0nG8y9ChHYb6hbAKQAFOk",
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_cascadeOpacityEnabled": true,
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 0,
+      "height": 0
+    },
+    "_rotationX": 0,
+    "_rotationY": 0,
+    "_scaleX": 1,
+    "_scaleY": 1,
+    "_position": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_localZOrder": 0,
+    "_globalZOrder": 0,
+    "_opacityModifyRGB": false,
+    "groupIndex": 0
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "UI",
+>>>>>>> master
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
     },
     "_children": [
       {
+<<<<<<< HEAD
         "__id__": 11
       },
       {
@@ -777,6 +841,9 @@
     "_children": [
       {
         "__id__": 23
+=======
+        "__id__": 12
+>>>>>>> master
       }
     ],
     "_tag": -1,
@@ -824,7 +891,11 @@
     "_name": "EndUI",
     "_objFlags": 0,
     "_parent": {
+<<<<<<< HEAD
       "__id__": 22
+=======
+      "__id__": 11
+>>>>>>> master
     },
     "_children": [],
     "_tag": -1,
