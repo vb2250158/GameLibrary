@@ -172,11 +172,7 @@
       "__id__": 3
     },
     "_enabled": true,
-    "collisionEnabled": false,
-    "isGameEnd": false,
-    "gameEndEvent": [],
-    "GameTimer": 0,
-    "GameScore": 0
+    "isGameEnd": false
   },
   {
     "__type__": "cc.Node",
