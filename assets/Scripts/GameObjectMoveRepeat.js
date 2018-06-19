@@ -45,4 +45,11 @@ cc.Class({
        self.node.x += self.speed.x * dt;
        self.node.y += self.speed.y * dt;
     },
+    addXSpeed(ev,value){
+        this.speed.x +=  parseInt( value);
+    },
+    addYSpeed(ev,value){
+        
+        this.speed.y += parseInt( value);
+    }
 });
