@@ -12,9 +12,22 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        lockX: false,
-        lockY: false,
-        _isTouch: false
+        // foo: {
+        //     // ATTRIBUTES:
+        //     default: null,        // The default value will be used only when the component attaching
+        //                           // to a node for the first time
+        //     type: cc.SpriteFrame, // optional, default is typeof default
+        //     serializable: true,   // optional, default is true
+        // },
+        // bar: {
+        //     get () {
+        //         return this._bar;
+        //     },
+        //     set (value) {
+        //         this._bar = value;
+        //     }
+        // },
+
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -22,24 +35,13 @@ cc.Class({
     // onLoad () {},
 
     start() {
-
         let self = this;
-        self.node.on(cc.Node.EventType.TOUCH_MOVE, function (ev) {
-            if (!director.isGameEnd) {
-                let moveSize = new cc.Vec2();
-                if (!self.lockX) {
-                    moveSize.x = ev.getDelta().x;
-
-                }
-                if (!self.lockY) {
-                    moveSize.y = ev.getDelta().y;
-                }
-                self.node.position = self.node.position.add(moveSize);
-            }
+        director.node.on("GameEnd", function () {
+            console.log("666");
+            self.node.active = true;
         });
-
-
+        self.node.active = false;
     },
 
-
+    // update (dt) {},
 });

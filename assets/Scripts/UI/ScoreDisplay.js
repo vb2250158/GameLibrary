@@ -12,12 +12,6 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        evenName: "",
-        evenList: {
-            default: [],
-            type: cc.Component.EventHandler
-        },
-
         // foo: {
         //     // ATTRIBUTES:
         //     default: null,        // The default value will be used only when the component attaching
@@ -33,24 +27,23 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
+        _scoreUI:cc.Label,
+        _score:0
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad() {
-        let self = this;
-        self.node.on(self.evenName, function (ev) {
-            for (let index = 0; index < self.evenList.length; index++) {
-                const element = self.evenList[index];
-                element.emit([ev,element.customEventData]);
-            }
-        });
+    // onLoad () {},
+
+    start () {
+        this._scoreUI=this.node.getComponent(cc.Label);
+    },
+    upDateUI(){
+      // console.log(director.gameFraction.score);
+      
+        this._score = cc.clampf( this._score+(director.gameFraction.score -  this._score+10)/10, this._score , director.gameFraction.score);
         
-    },
-
-    start() {
-        //  this.node.
-    },
-
+        this._scoreUI.string =  parseInt(this._score)+"";
+    }
     // update (dt) {},
 });

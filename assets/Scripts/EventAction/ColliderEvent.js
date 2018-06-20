@@ -42,7 +42,7 @@ cc.Class({
     // onLoad () {},
 
     start() {
-
+       
     },
     onCollisionEnter: function (other) {
         let self=this;

@@ -60,16 +60,13 @@ cc.Class({
         this.theNumber = this.awakeRoad(this.lineLength, this.roadNumber, function (nu) {
             self._nowPosis.push(nu);
         });
-        //   console.log(this.theNumber);
-
-        // this.createComponent
-        for (let index = 0; index < 1000; index++) {
-           // console.log("第", index, "行:");
-           // console.log(this.theNumber);
-            this.createComponent.build(this.theNumber);
-            this.theNumber = this.getNextLineNmbers(this.theNumber);
-        }
+        //   console.log(this.theNumber);        
     },
+    createNextLine(){
+        this.createComponent.build(this.theNumber);
+        this.theNumber = this.getNextLineNmbers(this.theNumber);
+    },
+
     /**
      * 初始化道路返回一个起点道路
      * @param  lineLength 道路横长度

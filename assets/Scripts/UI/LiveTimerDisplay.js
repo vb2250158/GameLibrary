@@ -12,12 +12,6 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        evenName: "",
-        evenList: {
-            default: [],
-            type: cc.Component.EventHandler
-        },
-
         // foo: {
         //     // ATTRIBUTES:
         //     default: null,        // The default value will be used only when the component attaching
@@ -33,24 +27,38 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
+        _liveTimerUI:cc.Label
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad() {
-        let self = this;
-        self.node.on(self.evenName, function (ev) {
-            for (let index = 0; index < self.evenList.length; index++) {
-                const element = self.evenList[index];
-                element.emit([ev,element.customEventData]);
-            }
-        });
-        
-    },
+    // onLoad () {},
 
-    start() {
-        //  this.node.
+    start () {
+        this._liveTimerUI=this.node.getComponent(cc.Label);
     },
-
+    upDateUI(){
+        let timerText= "";
+        let dotIndex = -1;
+        //分，秒，毫秒
+        let m="",s="",mm="";
+        timerText=director.gameFraction.liveTimer+"";
+       
+        m=parseInt(director.gameFraction.liveTimer/60)+"";
+        s= parseInt(director.gameFraction.liveTimer%60)+"";
+        dotIndex=timerText.indexOf('.');
+     
+        if (dotIndex!=-1) {          
+            mm= timerText.slice(dotIndex+1,dotIndex+3);
+        }
+        //补零
+        if(s.length<2){
+            s='0'+s;
+        }
+        if(mm.length<2){
+            mm='0'+mm;
+        }
+        this._liveTimerUI.string = m+":"+s+"."+mm;
+    }
     // update (dt) {},
 });

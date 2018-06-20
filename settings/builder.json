@@ -1,0 +1,41 @@
+{
+  "appKey": "",
+  "appSecret": "",
+  "encryptJs": true,
+  "excludeScenes": [],
+  "fb-instant-games": {},
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.GameLibrary",
+  "privateKey": "",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait"
+  },
+  "renderMode": "0",
+  "startScene": "bff4c80d-86f9-4999-8b16-54e80940e5f5",
+  "title": "GameLibrary",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx6ac3f5090a6b99c5",
+    "isSubdomain": false,
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "xxteaKey": "8e253e10-7bc7-46",
+  "zipCompressJs": true
+}
