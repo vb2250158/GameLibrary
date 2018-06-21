@@ -27,40 +27,28 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        timer: 1,
-        _timed: 0,
-        evenList: {
-            default: [],
-            type: cc.Component.EventHandler
-        },
+        value: 1,
+
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
-
     start() {
-        let self = this;
-        self._timed = self.timer;
-       
-    },
-    setTimer(timer){
-        this.timer=parseInt(timer);
-    },
-    addTimer(size){
-        this.timer-=parseInt(size);
-    }
-    ,
 
-    update(dt) {
-        let self = this;
-        self._timed -= dt;
-        if (self._timed <= 0) {
-            self._timed = self.timer;
-            for (let index = 0; index < this.evenList.length; index++) {
-                const element = this.evenList[index];
-                element.emit([element.customEventData]);
-            }
-        }
     },
+    /**
+     * 值减少
+     * @param {*} size 
+     */
+    minusNumber(size) {
+        this.value -= parseInt(size);
+        if (this.value <= 0) {
+            //销毁对象
+            this.node.destroy();
+        }
+    }
+
+
+    // update (dt) {},
 });

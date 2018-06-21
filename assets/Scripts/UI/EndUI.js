@@ -27,7 +27,7 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-
+        _EndAnimation:cc.Animation
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -36,9 +36,13 @@ cc.Class({
 
     start() {
         let self = this;
+        self._EndAnimation=self.node.getComponent(cc.Animation);
         director.node.on("GameEnd", function () {
-            console.log("666");
+            
             self.node.active = true;
+            self._EndAnimation.play();
+          
+
         });
         self.node.active = false;
     },

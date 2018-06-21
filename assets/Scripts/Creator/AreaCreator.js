@@ -8,6 +8,15 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 
+var Item = cc.Class({
+    name: 'Item',
+    properties: {
+        probability: 0,
+        itemObject: cc.Prefab
+
+    }
+});
+
 cc.Class({
     extends: cc.Component,
 
@@ -27,17 +36,55 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        preformList:[cc.Prefab],
-        _itemList:[cc.Node],
+        preformList: [Item],
+        _itemList: [cc.Node],
+        /**
+         * 区域随机范围
+         */
+        randomRange: cc.Vec2,
+        number: 3,
+        _offset: cc.Vec2,
+
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
 
-    start () {
+    start() {
 
     },
+    addNumber(addValue) {
+        this.number += addValue;
+    },
 
+    /**
+     * 在区域内随机构建
+     */
+    build() {
+        let self = this;
+        let randomNumber = cc.random0To1();
+        let targetNmber = 0;
+        let number = self.number;
+        for (let index = 0; index < number; index++) {
+            self.preformList.forEach(element => {
+                targetNmber += element.probability / self.preformList.length;
+                if (targetNmber > randomNumber) {
+                    //创建
+                    var newNode = cc.instantiate(element.itemObject);
+                    //设置父对象
+                    newNode.parent = self.node;
+                    //初始化位置
+                    newNode.x = cc.randomMinus1To1() * self.randomRange.x + self._offset.x;
+                    newNode.y = cc.randomMinus1To1() * self.randomRange.y + self._offset.y;
+                    //加入数组
+                    self._itemList.push(newNode);
+                    return;
+                }
+            });
+        }
+
+
+    }
     // update (dt) {},
 });

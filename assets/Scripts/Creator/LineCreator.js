@@ -39,7 +39,8 @@ cc.Class({
     },
     /**
      * 构建一组对象
-     * @param {*} indexs 
+     * 
+     * @param {*} indexs 如 [0,0,0,1,1]
      */
     build(indexs){
         let self=this;
