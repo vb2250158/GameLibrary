@@ -37,7 +37,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
+      "width": 80,
       "height": 100
     },
     "_rotationX": 0,
@@ -46,8 +46,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -315,
-      "y": 7.5
+      "x": -120,
+      "y": 0
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -64,7 +64,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "ef1ZBJLsBHyY8SMqws8+w6",
+    "fileId": "1fQSUt0lFPLqz92UShYAJc",
     "sync": false
   }
 ]
