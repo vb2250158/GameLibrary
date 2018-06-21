@@ -36,6 +36,7 @@ cc.Class({
     onDestroy(){
         let self=this;
         let newNode = cc.instantiate(self.CreateObject);
+        
         newNode.parent = self.node.parent;
         newNode.position = self.node.position;
     }

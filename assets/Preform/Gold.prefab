@@ -10,7 +10,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "entity",
+    "_name": "Gold",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -27,19 +27,28 @@
         "__id__": 4
       },
       {
-        "__id__": 6
+        "__id__": 5
+      },
+      {
+        "__id__": 8
+      },
+      {
+        "__id__": 9
+      },
+      {
+        "__id__": 10
       }
     ],
     "_prefab": {
-      "__id__": 7
+      "__id__": 11
     },
     "_id": "",
-    "_opacity": 175,
+    "_opacity": 152,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 0,
-      "b": 0,
+      "r": 168,
+      "g": 172,
+      "b": 255,
       "a": 255
     },
     "_cascadeOpacityEnabled": true,
@@ -50,8 +59,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 80,
-      "height": 100
+      "width": 50,
+      "height": 50
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -78,7 +87,7 @@
     },
     "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "d13e453f-a640-4241-90ea-ddfefa9a52f5"
+      "__uuid__": "5d529bf0-51e5-448d-885a-91352908f9eb"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -96,6 +105,24 @@
     "_atlas": null
   },
   {
+    "__type__": "cc.Animation",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_defaultClip": {
+      "__uuid__": "d203ec44-dbf3-4b9a-899f-637299fda621"
+    },
+    "_clips": [
+      {
+        "__uuid__": "d203ec44-dbf3-4b9a-899f-637299fda621"
+      }
+    ],
+    "playOnLoad": true
+  },
+  {
     "__type__": "cc.BoxCollider",
     "_name": "",
     "_objFlags": 0,
@@ -111,8 +138,8 @@
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 80,
-      "height": 100
+      "width": 50,
+      "height": 50
     }
   },
   {
@@ -125,7 +152,10 @@
     "_enabled": true,
     "enterEvenList": [
       {
-        "__id__": 5
+        "__id__": 6
+      },
+      {
+        "__id__": 7
       }
     ],
     "exitEvenList": []
@@ -136,8 +166,17 @@
       "__id__": 1
     },
     "component": "Fraction",
-    "handler": "GameEnd",
-    "customEventData": ""
+    "handler": "scoreUp",
+    "customEventData": "10"
+  },
+  {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 1
+    },
+    "component": "DestroyByValue",
+    "handler": "minusNumber",
+    "customEventData": "1"
   },
   {
     "__type__": "62e71K+SXxJz7KQquGUxEdR",
@@ -149,14 +188,36 @@
     "_enabled": true
   },
   {
+    "__type__": "0ee7cVWgmdBFI3HkcRf5L0R",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "CreateObject": {
+      "__uuid__": "175deb6c-28d3-4904-ac91-0406f5738759"
+    }
+  },
+  {
+    "__type__": "813f0kWt31Mm4ML3xqOAOrl",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "value": 1
+  },
+  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "c34eac8c-34d7-4b21-a188-55df1e306fff"
+      "__uuid__": "087ae091-e90c-4468-927c-21d3abe3d76a"
     },
-    "fileId": "c4bonz6uRIyo+UyC8rC9bm",
+    "fileId": "863Y4QJL5DE74dlzPeEL+J",
     "sync": false
   }
 ]
