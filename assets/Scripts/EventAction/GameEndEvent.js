@@ -42,7 +42,7 @@ cc.Class({
         director.node.on("GameEnd",function(){
             for (let index = 0; index < self.evenList.length; index++) {
                 const element = self.evenList[index];
-                element.emit([ev,element.customEventData]);
+                element.emit([element.customEventData]);
             }
         });
     },

@@ -147,13 +147,23 @@ cc.Class({
 
 
 
-
+            //遍历每一条路(遍历道路点)
             for (let index = 0; index < self._nowPosis.length; index++) {
 
+                //有概率生成该路的偏移点
                 if (0.5 > cc.random0To1()) {
                     //生成偏移点
                     let newPosi = parseInt(cc.random0To1() * upNumber.length);
                     let upPosi = self._nowPosis[index];
+
+                    //降低步数
+                    if (newPosi-upPosi>2) {
+                        newPosi=upPosi+2;
+                    } 
+                    if (newPosi-upPosi<-2) {
+                        newPosi=upPosi-2;
+                    }
+
 
                     //    console.log(upPosi, newPosi);
                     numbers = self.PosiMoveTo(numbers, newPosi, upPosi);

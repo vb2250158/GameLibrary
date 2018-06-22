@@ -22,10 +22,13 @@
       },
       {
         "__id__": 4
+      },
+      {
+        "__id__": 6
       }
     ],
     "_prefab": {
-      "__id__": 6
+      "__id__": 7
     },
     "_id": "",
     "_opacity": 255,
@@ -118,6 +121,16 @@
     "component": "AreaCreator",
     "handler": "build",
     "customEventData": ""
+  },
+  {
+    "__type__": "2b921y+vjdBXp8hq+ytxbGe",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "liveTime": 15
   },
   {
     "__type__": "cc.PrefabInfo",
