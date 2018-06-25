@@ -8,6 +8,8 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 
+
+
 cc.Class({
     extends: cc.Component,
 
@@ -27,40 +29,44 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        timer: 1,
-        _timed: 0,
-        evenList: {
-            default: [],
-            type: cc.Component.EventHandler
+        _rigidBody: cc.RigidBody,
+        /**
+         * 随机速度
+         */
+        randomVelocityX: {
+            default: new cc.Vec2(0, 0),
+
+            displayName: "X方向随机速度"
         },
+        randomVelocityY: {
+            default: new cc.Vec2(0, 0),
+
+            displayName: "Y方向随机速度"
+        },
+
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad() {
+        let self = this;
+        self._rigidBody = self.node.getComponent(cc.RigidBody);
+    },
 
     start() {
         let self = this;
-        self._timed = self.timer;
+
+ 
+        self.setLinearVelocityX((cc.random0To1() * (self.randomVelocityX.y - self.randomVelocityX.x)) + self.randomVelocityX.x);
+        self.setLinearVelocityY((cc.random0To1() * (self.randomVelocityY.y - self.randomVelocityY.x)) + self.randomVelocityY.x);
 
     },
-    setTimer(timer) {
-        this.timer = parseFloat(timer);
-    },
-    addTimer(size) {
-        this.timer += parseFloat(size);
+    setLinearVelocityX(value) {
+        this._rigidBody.linearVelocity = new cc.Vec2(parseInt(value), this._rigidBody.linearVelocity.y);
+
+   },
+    setLinearVelocityY(value) {
+        this._rigidBody.linearVelocity = new cc.Vec2(this._rigidBody.linearVelocity.x, parseInt(value));
     }
-    ,
-
-    update(dt) {
-        let self = this;
-        self._timed -= dt;
-        if (self._timed <= 0) {
-            self._timed = self.timer;
-            for (let index = 0; index < this.evenList.length; index++) {
-                const element = this.evenList[index];
-                element.emit([element.customEventData]);
-            }
-        }
-    },
+    // update (dt) {},
 });

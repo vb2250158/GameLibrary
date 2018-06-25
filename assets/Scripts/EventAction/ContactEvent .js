@@ -27,9 +27,12 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        timer: 1,
-        _timed: 0,
-        evenList: {
+        tag: 0,
+        enterEvenList: {
+            default: [],
+            type: cc.Component.EventHandler
+        },
+        exitEvenList: {
             default: [],
             type: cc.Component.EventHandler
         },
@@ -40,27 +43,28 @@ cc.Class({
     // onLoad () {},
 
     start() {
-        let self = this;
-        self._timed = self.timer;
 
     },
-    setTimer(timer) {
-        this.timer = parseFloat(timer);
-    },
-    addTimer(size) {
-        this.timer += parseFloat(size);
-    }
-    ,
-
-    update(dt) {
+    onBeginContact: function (contact, selfCollider, otherCollider) {
         let self = this;
-        self._timed -= dt;
-        if (self._timed <= 0) {
-            self._timed = self.timer;
-            for (let index = 0; index < this.evenList.length; index++) {
-                const element = this.evenList[index];
-                element.emit([element.customEventData]);
+        if (otherCollider.tag == self.tag) {
+            for (let index = 0; index < self.enterEvenList.length; index++) {
+                const element = self.enterEvenList[index];
+                element.emit([element.customEventData, otherCollider]);
+            }
+        }
+
+    },
+
+    // 只在两个碰撞体结束接触时被调用一次
+    onEndContact: function (contact, selfCollider, otherCollider) {
+        let self = this;
+        if (otherCollider.tag == self.tag) {
+            for (let index = 0; index < self.exitEvenList.length; index++) {
+                const element = self.exitEvenList[index];
+                element.emit([element.customEventData, otherCollider]);
             }
         }
     },
+
 });
