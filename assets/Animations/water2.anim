@@ -1,0 +1,29 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "water2",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 3.9833333333333334,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "props": {
+      "skewY": [
+        {
+          "frame": 0,
+          "value": -25
+        },
+        {
+          "frame": 1.9833333333333334,
+          "value": 25
+        },
+        {
+          "frame": 3.9833333333333334,
+          "value": -25
+        }
+      ]
+    }
+  },
+  "events": []
+}

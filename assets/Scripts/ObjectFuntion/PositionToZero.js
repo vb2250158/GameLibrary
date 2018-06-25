@@ -27,12 +27,7 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        timer: 1,
-        _timed: 0,
-        evenList: {
-            default: [],
-            type: cc.Component.EventHandler
-        },
+        isUpdate: false
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -40,27 +35,16 @@ cc.Class({
     // onLoad () {},
 
     start() {
-        let self = this;
-        self._timed = self.timer;
-
+        // this.positionToZero();
     },
-    setTimer(timer) {
-        this.timer = parseFloat(timer);
-    },
-    addTimer(size) {
-        this.timer += parseFloat(size);
-    }
-    ,
 
+    positionToZero() {
+        this.node.x = 0;
+        this.node.y = 0;
+    },
     update(dt) {
-        let self = this;
-        self._timed -= dt;
-        if (self._timed <= 0) {
-            self._timed = self.timer;
-            for (let index = 0; index < this.evenList.length; index++) {
-                const element = this.evenList[index];
-                element.emit([element.customEventData]);
-            }
+        if (this.isUpdate) {
+            this.positionToZero();
         }
     },
 });
