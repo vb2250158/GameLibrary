@@ -8,8 +8,6 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 
-
-
 cc.Class({
     extends: cc.Component,
 
@@ -29,44 +27,44 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        _rigidBody: cc.RigidBody,
-        /**
-         * 随机速度
-         */
-        randomVelocityX: {
-            default: new cc.Vec2(0, 0),
-
-            displayName: "X方向随机速度"
+        tag: 0,
+        enterEvenList: {
+            default: [],
+            type: cc.Component.EventHandler
         },
-        randomVelocityY: {
-            default: new cc.Vec2(0, 0),
-
-            displayName: "Y方向随机速度"
+        exitEvenList: {
+            default: [],
+            type: cc.Component.EventHandler
         },
-
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad() {
-        let self = this;
-        self._rigidBody = self.node.getComponent(cc.RigidBody);
-    },
+    // onLoad () {},
 
     start() {
-        let self = this;
-
- 
-        self.setLinearVelocityX((cc.random0To1() * (self.randomVelocityX.y - self.randomVelocityX.x)) + self.randomVelocityX.x);
-        self.setLinearVelocityY((cc.random0To1() * (self.randomVelocityY.y - self.randomVelocityY.x)) + self.randomVelocityY.x);
 
     },
-    setLinearVelocityX(value) {
-        this._rigidBody.linearVelocity = new cc.Vec2(parseInt(value), this._rigidBody.linearVelocity.y);
+    onBeginContact: function (contact, selfCollider, otherCollider) {
+        let self = this;
+        if (otherCollider.tag == self.tag) {
+            for (let index = 0; index < self.enterEvenList.length; index++) {
+                const element = self.enterEvenList[index];
+                element.emit([element.customEventData, otherCollider]);
+            }
+        }
 
-   },
-    setLinearVelocityY(value) {
-        this._rigidBody.linearVelocity = new cc.Vec2(this._rigidBody.linearVelocity.x, parseInt(value));
-    }
-    // update (dt) {},
+    },
+
+    // 只在两个碰撞体结束接触时被调用一次
+    onEndContact: function (contact, selfCollider, otherCollider) {
+        let self = this;
+        if (otherCollider.tag == self.tag) {
+            for (let index = 0; index < self.exitEvenList.length; index++) {
+                const element = self.exitEvenList[index];
+                element.emit([element.customEventData, otherCollider]);
+            }
+        }
+    },
+
 });

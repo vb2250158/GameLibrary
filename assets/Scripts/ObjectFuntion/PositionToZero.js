@@ -8,8 +8,6 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 
-
-
 cc.Class({
     extends: cc.Component,
 
@@ -29,44 +27,24 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        _rigidBody: cc.RigidBody,
-        /**
-         * 随机速度
-         */
-        randomVelocityX: {
-            default: new cc.Vec2(0, 0),
-
-            displayName: "X方向随机速度"
-        },
-        randomVelocityY: {
-            default: new cc.Vec2(0, 0),
-
-            displayName: "Y方向随机速度"
-        },
-
+        isUpdate: false
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad() {
-        let self = this;
-        self._rigidBody = self.node.getComponent(cc.RigidBody);
-    },
+    // onLoad () {},
 
     start() {
-        let self = this;
-
- 
-        self.setLinearVelocityX((cc.random0To1() * (self.randomVelocityX.y - self.randomVelocityX.x)) + self.randomVelocityX.x);
-        self.setLinearVelocityY((cc.random0To1() * (self.randomVelocityY.y - self.randomVelocityY.x)) + self.randomVelocityY.x);
-
+        // this.positionToZero();
     },
-    setLinearVelocityX(value) {
-        this._rigidBody.linearVelocity = new cc.Vec2(parseInt(value), this._rigidBody.linearVelocity.y);
 
-   },
-    setLinearVelocityY(value) {
-        this._rigidBody.linearVelocity = new cc.Vec2(this._rigidBody.linearVelocity.x, parseInt(value));
-    }
-    // update (dt) {},
+    positionToZero() {
+        this.node.x = 0;
+        this.node.y = 0;
+    },
+    update(dt) {
+        if (this.isUpdate) {
+            this.positionToZero();
+        }
+    },
 });
