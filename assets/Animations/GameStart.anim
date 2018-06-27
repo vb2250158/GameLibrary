@@ -1,0 +1,41 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "GameStart",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 4.333333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "props": {
+      "x": [
+        {
+          "frame": 0,
+          "value": -510
+        },
+        {
+          "frame": 0.3333333333333333,
+          "value": 128
+        },
+        {
+          "frame": 0.36666666666666664,
+          "value": 90
+        },
+        {
+          "frame": 0.4,
+          "value": 101
+        },
+        {
+          "frame": 4,
+          "value": 101
+        },
+        {
+          "frame": 4.333333333333333,
+          "value": 660
+        }
+      ]
+    }
+  },
+  "events": []
+}

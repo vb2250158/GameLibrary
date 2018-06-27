@@ -16,7 +16,7 @@ cc.Class({
          * 道路偏移概率
          */
         deviationSize: 0.1,
-        createComponent: require("../Creator/LineCreator"),
+        _createComponent: require("../Creator/LineCreator"),
         /**
          * 道路数量
          */
@@ -57,13 +57,14 @@ cc.Class({
 
     start() {
         let self = this;
+        self._createComponent = self.node.getComponent(require("../Creator/LineCreator"));
         this.theNumber = this.awakeRoad(this.lineLength, this.roadNumber, function (nu) {
             self._nowPosis.push(nu);
         });
         //   console.log(this.theNumber);        
     },
-    createNextLine(){
-        this.createComponent.build(this.theNumber);
+    createNextLine() {
+        this._createComponent.build(this.theNumber);
         this.theNumber = this.getNextLineNmbers(this.theNumber);
     },
 
@@ -146,15 +147,25 @@ cc.Class({
 
 
 
-
+            //遍历每一条路(遍历道路点)
             for (let index = 0; index < self._nowPosis.length; index++) {
 
+                //有概率生成该路的偏移点
                 if (0.5 > cc.random0To1()) {
                     //生成偏移点
                     let newPosi = parseInt(cc.random0To1() * upNumber.length);
                     let upPosi = self._nowPosis[index];
 
-                //    console.log(upPosi, newPosi);
+                    //降低步数
+                    if (newPosi-upPosi>2) {
+                        newPosi=upPosi+2;
+                    } 
+                    if (newPosi-upPosi<-2) {
+                        newPosi=upPosi-2;
+                    }
+
+
+                    //    console.log(upPosi, newPosi);
                     numbers = self.PosiMoveTo(numbers, newPosi, upPosi);
 
                     self._nowPosis[index] = newPosi;

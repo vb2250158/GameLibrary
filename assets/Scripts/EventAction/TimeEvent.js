@@ -42,13 +42,13 @@ cc.Class({
     start() {
         let self = this;
         self._timed = self.timer;
-
+       
     },
-    setTimer(timer) {
-        this.timer = parseFloat(timer);
+    setTimer(timer){
+        this.timer=parseInt(timer);
     },
-    addTimer(size) {
-        this.timer += parseFloat(size);
+    addTimer(size){
+        this.timer-=parseInt(size);
     }
     ,
 

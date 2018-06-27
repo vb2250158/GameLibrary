@@ -14,9 +14,6 @@ cc.Class({
     properties: {
         lockX: false,
         lockY: false,
-        moveSizeLock: false,
-        XSize: cc.Vec2,
-        YSize: cc.Vec2,
         _isTouch: false
     },
 
@@ -30,7 +27,6 @@ cc.Class({
         self.node.on(cc.Node.EventType.TOUCH_MOVE, function (ev) {
             if (!director.isGameEnd) {
                 let moveSize = new cc.Vec2();
-                //移动锁
                 if (!self.lockX) {
                     moveSize.x = ev.getDelta().x;
 
@@ -38,24 +34,6 @@ cc.Class({
                 if (!self.lockY) {
                     moveSize.y = ev.getDelta().y;
                 }
-                //移动大小锁（边距）
-                if (self.moveSizeLock) {
-                    //移动限制
-                    if (self.node.position.x < self.XSize.x && moveSize.x < 0) {
-                        moveSize.x = 0;
-                    } else if (self.node.position.x > self.XSize.y && moveSize.x > 0) {
-                        moveSize.x = 0;
-                    }
-
-                    if (self.node.position.y < self.YSize.x && moveSize.y < 0) {
-                        moveSize.y = 0;
-                    } else if (self.node.position.y > self.YSize.y && moveSize.y > 0) {
-                        moveSize.y = 0;
-                    }
-
-                }
-
-
                 self.node.position = self.node.position.add(moveSize);
             }
         });

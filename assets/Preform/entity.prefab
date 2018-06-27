@@ -22,18 +22,30 @@
       },
       {
         "__id__": 3
+      },
+      {
+        "__id__": 5
+      },
+      {
+        "__id__": 6
+      },
+      {
+        "__id__": 7
+      },
+      {
+        "__id__": 12
       }
     ],
     "_prefab": {
-      "__id__": 4
+      "__id__": 14
     },
     "_id": "",
-    "_opacity": 175,
+    "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 153,
-      "b": 0,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_cascadeOpacityEnabled": true,
@@ -44,7 +56,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
+      "width": 80,
       "height": 100
     },
     "_rotationX": 0,
@@ -53,8 +65,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -1267,
-      "y": 234
+      "x": -361,
+      "y": 0
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -62,32 +74,6 @@
     "_globalZOrder": 0,
     "_opacityModifyRGB": false,
     "groupIndex": 0
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "_spriteFrame": {
-      "__uuid__": "f82f49ec-4aa4-4e12-8668-b0173f21f070"
-    },
-    "_type": 0,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_atlas": null
   },
   {
     "__type__": "cc.BoxCollider",
@@ -105,9 +91,138 @@
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 100,
-      "height": 100
+      "width": 40,
+      "height": 103
     }
+  },
+  {
+    "__type__": "5934frLPlROQ5e2CpI964wf",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "enterEvenList": [
+      {
+        "__id__": 4
+      }
+    ],
+    "exitEvenList": []
+  },
+  {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 1
+    },
+    "component": "Fraction",
+    "handler": "GameEnd",
+    "customEventData": ""
+  },
+  {
+    "__type__": "62e71K+SXxJz7KQquGUxEdR",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true
+  },
+  {
+    "__type__": "2b921y+vjdBXp8hq+ytxbGe",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "liveTime": 15
+  },
+  {
+    "__type__": "d6f0fmvQ7RLBY4U1O6ia2tu",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "preformList": [
+      {
+        "__id__": 8
+      },
+      {
+        "__id__": 9
+      },
+      {
+        "__id__": 10
+      },
+      {
+        "__id__": 11
+      }
+    ],
+    "_itemList": [],
+    "randomRange": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "number": 1,
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "__type__": "Item",
+    "probability": 1,
+    "itemObject": {
+      "__uuid__": "852adda0-b2b0-4ff2-92ea-464d161bcfab"
+    }
+  },
+  {
+    "__type__": "Item",
+    "probability": 1,
+    "itemObject": {
+      "__uuid__": "4294dd53-d9a1-4192-83e2-4d6fe9a32234"
+    }
+  },
+  {
+    "__type__": "Item",
+    "probability": 1,
+    "itemObject": {
+      "__uuid__": "b2828c50-08f5-41d2-87ff-276f540b4cab"
+    }
+  },
+  {
+    "__type__": "Item",
+    "probability": 1,
+    "itemObject": {
+      "__uuid__": "49719940-7f9b-4b49-9471-8cc649a91941"
+    }
+  },
+  {
+    "__type__": "e35896zXT5K6789dn/zAG8L",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "evenList": [
+      {
+        "__id__": 13
+      }
+    ]
+  },
+  {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 1
+    },
+    "component": "AreaCreator",
+    "handler": "build",
+    "customEventData": ""
   },
   {
     "__type__": "cc.PrefabInfo",

@@ -12,8 +12,8 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        preformList:[cc.Prefab],
-        itemList:[cc.Node],
+        preformList: [cc.Prefab],
+        itemList: [cc.Node],
         // foo: {
         //     // ATTRIBUTES:
         //     default: null,        // The default value will be used only when the component attaching
@@ -29,33 +29,47 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
+        /**
+         * 行数
+         */
+        _lineNumber: 0,
+        itemSize: cc.Vec2
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
 
-    start () {
+    start() {
     },
     /**
      * 构建一组对象
      * 
      * @param {*} indexs 如 [0,0,0,1,1]
      */
-    build(indexs){
-        let self=this;
-        
+    build(indexs) {
+        let self = this;
+
+
+        console.log(indexs.length);
         for (let index = 0; index < indexs.length; index++) {
-            
+        
             //创建
-            var newNode =  cc.instantiate(self.preformList[indexs[index]]);
+            var newNode = cc.instantiate(self.preformList[indexs[index]]);
             //设置父对象
             newNode.parent = self.node;
+            // console.log(-(newNode.parent.width / 2) + (self.itemSize.x / 2) + (index * self.itemSize.x));
+            newNode.x = -(newNode.parent.width / 2) + (self.itemSize.x / 2) + (index * self.itemSize.x);
+            newNode.y = self.itemSize.y * self._lineNumber;
+
+            newNode.width = self.itemSize.x;
+            newNode.height =self.itemSize.y;
             //加入数组
             self.itemList.push(newNode);
 
         }
-     
+        self._lineNumber++;
+
     }
     // update (dt) {},
 });
