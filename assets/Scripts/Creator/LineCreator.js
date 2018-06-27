@@ -49,13 +49,16 @@ cc.Class({
      */
     build(indexs) {
         let self = this;
-        for (let index = 0; index < indexs.length; index++) {
 
+
+        console.log(indexs.length);
+        for (let index = 0; index < indexs.length; index++) {
+        
             //创建
             var newNode = cc.instantiate(self.preformList[indexs[index]]);
             //设置父对象
             newNode.parent = self.node;
-            console.log(-(newNode.parent.width / 2) + (self.itemSize.x / 2) + (index * self.itemSize.x));
+            // console.log(-(newNode.parent.width / 2) + (self.itemSize.x / 2) + (index * self.itemSize.x));
             newNode.x = -(newNode.parent.width / 2) + (self.itemSize.x / 2) + (index * self.itemSize.x);
             newNode.y = self.itemSize.y * self._lineNumber;
 

@@ -66,8 +66,11 @@ cc.Class({
         let randomNumber = cc.random0To1();
         let targetNmber = 0;
         let number = self.number;
+        //构建一组对象
         for (let index = 0; index < number; index++) {
-            self.preformList.forEach(element => {
+            //随机构建一个
+            for (let i = 0; i < self.preformList.length; i++) {
+                const element = self.preformList[i];
                 targetNmber += element.probability / self.preformList.length;
                 if (targetNmber > randomNumber) {
                     //创建
@@ -79,10 +82,12 @@ cc.Class({
                     newNode.y = cc.randomMinus1To1() * self.randomRange.y + self._offset.y;
                     //加入数组
                     self._itemList.push(newNode);
-                    return;
+                    break;
                 }
-            });
+            }
+
         }
+
 
 
     }
