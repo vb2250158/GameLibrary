@@ -21,14 +21,14 @@
         "__id__": 2
       },
       {
-        "__id__": 5
+        "__id__": 6
       },
       {
-        "__id__": 7
+        "__id__": 8
       }
     ],
     "_prefab": {
-      "__id__": 8
+      "__id__": 9
     },
     "_id": "",
     "_opacity": 255,
@@ -80,6 +80,9 @@
       },
       {
         "__id__": 4
+      },
+      {
+        "__id__": 5
       }
     ],
     "_itemList": [],
@@ -97,16 +100,23 @@
   },
   {
     "__type__": "Item",
-    "probability": 1,
+    "probability": 49,
     "itemObject": {
       "__uuid__": "087ae091-e90c-4468-927c-21d3abe3d76a"
     }
   },
   {
     "__type__": "Item",
-    "probability": 1,
+    "probability": 50,
     "itemObject": {
       "__uuid__": "410925c9-061b-4c6e-9004-375ea58a7005"
+    }
+  },
+  {
+    "__type__": "Item",
+    "probability": 1,
+    "itemObject": {
+      "__uuid__": "f2053682-aece-4dda-9d90-27d32371eb7a"
     }
   },
   {
@@ -119,7 +129,7 @@
     "_enabled": true,
     "evenList": [
       {
-        "__id__": 6
+        "__id__": 7
       }
     ]
   },

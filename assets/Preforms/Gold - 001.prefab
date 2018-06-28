@@ -10,7 +10,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Gold",
+    "_name": "Gold - 001",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -47,8 +47,8 @@
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_cascadeOpacityEnabled": true,
@@ -221,7 +221,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "087ae091-e90c-4468-927c-21d3abe3d76a"
+      "__uuid__": "f2053682-aece-4dda-9d90-27d32371eb7a"
     },
     "fileId": "863Y4QJL5DE74dlzPeEL+J",
     "sync": false
