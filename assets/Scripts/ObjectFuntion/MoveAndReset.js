@@ -57,7 +57,7 @@ cc.Class({
         }
     },
     speedUp(ev, value) {
-        console.log(ev);
+     
         this.speed += parseInt(value);
     }
 

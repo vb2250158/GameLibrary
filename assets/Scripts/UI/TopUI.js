@@ -7,6 +7,6 @@ cc.Class({
 
 
     start() {
-        this.node.y = cc.view.getVisibleSize().height/2 - upSize;
+        this.node.y = cc.view.getVisibleSize().height/2 - this.upSize;
     },
 });
