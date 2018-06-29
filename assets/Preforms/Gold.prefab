@@ -37,10 +37,13 @@
       },
       {
         "__id__": 11
+      },
+      {
+        "__id__": 12
       }
     ],
     "_prefab": {
-      "__id__": 12
+      "__id__": 13
     },
     "_id": "",
     "_opacity": 255,
@@ -213,6 +216,18 @@
     "_enabled": true,
     "CreateObject": {
       "__uuid__": "175deb6c-28d3-4904-ac91-0406f5738759"
+    }
+  },
+  {
+    "__type__": "0ee7cVWgmdBFI3HkcRf5L0R",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "CreateObject": {
+      "__uuid__": "1ee7a891-7821-437b-a366-2f6f70e25dfd"
     }
   },
   {
