@@ -50,15 +50,15 @@ cc.Class({
     build(indexs) {
         let self = this;
         for (let index = 0; index < indexs.length; index++) {
-
+            
             //创建
             var newNode = cc.instantiate(self.preformList[indexs[index]]);
             //设置父对象
             newNode.parent = self.node;
-            // console.log(-(newNode.parent.width / 2) + (self.itemSize.x / 2) + (index * self.itemSize.x));
+            // 设置节点的X和Y
             newNode.x = -(newNode.parent.width / 2) + (self.itemSize.x / 2) + (index * self.itemSize.x);
             newNode.y = self.itemSize.y * self._lineNumber;
-
+            //设置节点的高和宽
             newNode.width = self.itemSize.x;
             newNode.height = self.itemSize.y;
             //加入数组

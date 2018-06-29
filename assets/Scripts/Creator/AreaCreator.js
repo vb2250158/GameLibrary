@@ -8,15 +8,6 @@
 //  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
 
-var Item = cc.Class({
-    name: 'Item',
-    properties: {
-        probability: 0,
-        itemObject: cc.Prefab
-
-    }
-});
-
 cc.Class({
     extends: cc.Component,
 
@@ -36,7 +27,7 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        preformList: [Item],
+        preformList: [require("../Library/Item")],
         _itemList: [cc.Node],
         /**
          * 区域随机范围
