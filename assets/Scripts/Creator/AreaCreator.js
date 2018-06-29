@@ -66,12 +66,20 @@ cc.Class({
         let randomNumber = cc.random0To1();
         let targetNmber = 0;
         let number = self.number;
+        let allProbability = 0;
+        //获得所有可能性
+        for (let i = 0; i < self.preformList.length; i++) {
+            allProbability += self.preformList[i].probability;
+        }
         //构建一组对象
         for (let index = 0; index < number; index++) {
             //随机构建一个
             for (let i = 0; i < self.preformList.length; i++) {
                 const element = self.preformList[i];
-                targetNmber += element.probability / self.preformList.length;
+                targetNmber += element.probability / allProbability;
+                if (self.node.name == "road") {
+                    console.log(self.node.name, targetNmber);
+                }
                 if (targetNmber > randomNumber) {
                     //创建
                     var newNode = cc.instantiate(element.itemObject);
