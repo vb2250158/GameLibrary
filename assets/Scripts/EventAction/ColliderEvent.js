@@ -35,6 +35,10 @@ cc.Class({
             default: [],
             type: cc.Component.EventHandler
         },
+        stayEvenList: {
+            default: [],
+            type: cc.Component.EventHandler
+        },
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -52,12 +56,20 @@ cc.Class({
         }
       
     },
+   
     onCollisionExit: function (other) {
         let self=this;
         for (let index = 0; index < self.exitEvenList.length; index++) {
             const element = self.exitEvenList[index];
             element.emit([element.customEventData,other]);
         }
-    }
+    },
+    onCollisionStay: function (other) {
+        let self=this;
+        for (let index = 0; index < self.stayEvenList.length; index++) {
+            const element = self.stayEvenList[index];
+            element.emit([element.customEventData,other]);
+        }
+    },
     // update (dt) {},
 });

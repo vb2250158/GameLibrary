@@ -19,10 +19,25 @@
     "_components": [
       {
         "__id__": 2
+      },
+      {
+        "__id__": 3
+      },
+      {
+        "__id__": 4
+      },
+      {
+        "__id__": 5
+      },
+      {
+        "__id__": 8
+      },
+      {
+        "__id__": 9
       }
     ],
     "_prefab": {
-      "__id__": 3
+      "__id__": 10
     },
     "_id": "",
     "_opacity": 255,
@@ -50,7 +65,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 0,
+      "x": -157,
       "y": 0
     },
     "_skewX": 0,
@@ -87,14 +102,100 @@
     "_atlas": null
   },
   {
+    "__type__": "2b921y+vjdBXp8hq+ytxbGe",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "liveTime": 10
+  },
+  {
+    "__type__": "cc.BoxCollider",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "tag": 0,
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_size": {
+      "__type__": "cc.Size",
+      "width": 146,
+      "height": 147
+    }
+  },
+  {
+    "__type__": "5934frLPlROQ5e2CpI964wf",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "enterEvenList": [],
+    "exitEvenList": [],
+    "stayEvenList": [
+      {
+        "__id__": 6
+      },
+      {
+        "__id__": 7
+      }
+    ]
+  },
+  {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 1
+    },
+    "component": "SelecetControl",
+    "handler": "addY",
+    "customEventData": "-5"
+  },
+  {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 1
+    },
+    "component": "DestroyByValue",
+    "handler": "minusNumber",
+    "customEventData": "1"
+  },
+  {
+    "__type__": "05f63v6dzxO9L5xdwhPpDMx",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true
+  },
+  {
+    "__type__": "813f0kWt31Mm4ML3xqOAOrl",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "value": 3
+  },
+  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "c1b0d820-5ee3-42e9-9b7f-1f929685f48d"
     },
-    "fileId": "647maj6CBFaZ7f7l6c7hk0",
+    "fileId": "646403T15GkbPdDfZUc+wa",
     "sync": false
   }
 ]
