@@ -34,6 +34,7 @@ cc.Class({
          * 重置时位置大小
          */
         resetSize: 0,
+        vertical: true
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -47,17 +48,30 @@ cc.Class({
      * 重置背景
      */
     resetBg() {
-        this.node.y = 0;
+        if (this.vertical) {
+            this.node.y = 0;
+        } else {
+            this.node.x = 0;
+        }
     },
     update(dt) {
-        this.node.y -= dt * this.speed;
+        if (this.vertical) {
+            this.node.y -= dt * this.speed;
 
-        if (this.node.y <= this.resetSize) {
-            this.resetBg();
+            if (this.node.y <= this.resetSize) {
+                this.resetBg();
+            }
+        } else {
+          //  console.log("?!",  this.speed);
+            this.node.x -= dt * this.speed;
+            if (this.node.x <= this.resetSize) {
+                
+                this.resetBg();
+            }
         }
     },
     speedUp(ev, value) {
-     
+
         this.speed += parseInt(value);
     }
 
