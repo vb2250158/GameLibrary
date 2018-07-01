@@ -10,7 +10,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Bubble",
+    "_name": "LBubble",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -171,8 +171,8 @@
     "valueName": "speed",
     "x": {
       "__type__": "cc.Vec2",
-      "x": -50,
-      "y": 50
+      "x": 0,
+      "y": 100
     },
     "y": {
       "__type__": "cc.Vec2",
@@ -224,7 +224,7 @@
     },
     "component": "Fraction",
     "handler": "scoreUp",
-    "customEventData": ""
+    "customEventData": "1"
   },
   {
     "__type__": "813f0kWt31Mm4ML3xqOAOrl",
@@ -330,7 +330,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "c7d7f7e5-d088-47d9-9cc7-444ce81f68a7"
+      "__uuid__": "6fe30b61-2fc6-42fb-9512-fac258f13359"
     },
     "fileId": "a4+YkPBptCDKQKEK3nb7gx",
     "sync": false

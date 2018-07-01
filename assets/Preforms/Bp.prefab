@@ -81,7 +81,7 @@
     "_autoRemoveOnFinish": true,
     "_totalParticles": 150,
     "_duration": 0.3,
-    "_emissionRate": 100,
+    "_emissionRate": 50,
     "_life": 1,
     "_lifeVar": 0,
     "_startColor": {
@@ -160,7 +160,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "86fcba5e-097f-44b7-aab1-151d7db28872"
     },
     "fileId": "3287qGaoREp5CxSv87Vwp4",
     "sync": false
