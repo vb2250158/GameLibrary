@@ -15,8 +15,8 @@ cc.Class({
         loadSetting: true,
         cmponentNmae: "",
         valueName: "",
-        x: cc.Vec2,
-        y: cc.Vec2
+        X: true,
+        Y: true
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -28,11 +28,19 @@ cc.Class({
 
     },
     upSet() {
-        
-        let value = this.node.getComponent(this.cmponentNmae)[this.valueName];
-        value.x = (cc.random0To1() * (this.x.y - this.x.x)) + this.x.x;
-        value.y = (cc.random0To1() * (this.y.y - this.y.x)) + this.y.x;
 
-       
+        let value = this.node.getComponent(this.cmponentNmae)[this.valueName];
+        
+        if (this.X) {
+            value.x = -value.x;
+        }
+        if (this.Y) {
+            value.y = -value.y;
+
+        }
+
+
     }
 });
+
+
