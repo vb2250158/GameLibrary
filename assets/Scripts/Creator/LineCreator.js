@@ -23,7 +23,12 @@ cc.Class({
          * 行数
          */
         _lineNumber: 0,
-        itemSize: cc.Vec2
+        itemSize: cc.Vec2,
+        /**
+         * 深度层级调整
+         */
+        zOpen: true,
+        _theZSize:0
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -40,7 +45,7 @@ cc.Class({
     build(indexs) {
         let self = this;
         for (let index = 0; index < indexs.length; index++) {
-            
+
             //创建
             var newNode = cc.instantiate(self.preformList[indexs[index]]);
             //设置父对象
@@ -51,9 +56,12 @@ cc.Class({
             //设置节点的高和宽
             newNode.width = self.itemSize.x;
             newNode.height = self.itemSize.y;
+            if (this.zOpen) {
+                newNode.zIndex = self._theZSize--;
+            }
+            
             //加入数组
             self.itemList.push(newNode);
-
         }
         self._lineNumber++;
 

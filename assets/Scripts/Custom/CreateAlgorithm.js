@@ -38,7 +38,8 @@ cc.Class({
         /**
          * 当前的道路数组
          */
-        theNumber: []
+        theNumber: [],
+     
     },
 
     // LIFE-CYCLE CALLBACKS:
