@@ -846,7 +846,8 @@
     "roadNumber": 4,
     "_nowPosis": [],
     "lineLength": 8,
-    "theNumber": []
+    "theNumber": [],
+    "_upCorner": false
   },
   {
     "__type__": "c17bdoPGhhNyZsSFs7z0tcA",
@@ -1832,7 +1833,7 @@
     "node": {
       "__id__": 6
     },
-    "_enabled": true,
+    "_enabled": false,
     "_clip": {
       "__uuid__": "74708e79-6ff7-4f0a-b437-5653c18a23e7"
     },
