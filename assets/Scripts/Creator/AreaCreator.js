@@ -2,28 +2,8 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-<<<<<<< HEAD
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
-        preformList: [require("../Library/Item")],
-        _itemList: [cc.Node],
-=======
         preformList: [require("../LibraryFuntion/Item")],
 
->>>>>>> 农场跑酷
         /**
          * 区域随机范围
          */

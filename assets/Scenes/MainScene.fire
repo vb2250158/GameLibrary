@@ -409,7 +409,6 @@
         "__id__": 11
       }
     ],
-    "_itemList": [],
     "randomRange": {
       "__type__": "cc.Vec2",
       "x": 100,
@@ -1048,6 +1047,7 @@
       "__id__": 27
     },
     "_enabled": true,
+    "targetTag": 0,
     "enterEvenList": [
       {
         "__id__": 31
@@ -1140,6 +1140,7 @@
       "__id__": 17
     },
     "_enabled": true,
+    "targetTag": 0,
     "enterEvenList": [
       {
         "__id__": 37
@@ -1250,7 +1251,6 @@
         "__id__": 42
       }
     ],
-    "_itemList": [],
     "randomRange": {
       "__type__": "cc.Vec2",
       "x": 100,
@@ -1426,7 +1426,6 @@
         "__id__": 52
       }
     ],
-    "_itemList": [],
     "randomRange": {
       "__type__": "cc.Vec2",
       "x": 100,
@@ -1844,6 +1843,7 @@
       "__id__": 65
     },
     "_enabled": true,
+    "targetTag": 0,
     "enterEvenList": [
       {
         "__id__": 68
