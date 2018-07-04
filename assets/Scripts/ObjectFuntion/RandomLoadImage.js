@@ -12,7 +12,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        imageList: [require("../Library/ItemImage")]
+        imageList: [require("../LibraryFuntion/ItemImage")]
     },
     // LIFE-CYCLE CALLBACKS:
 

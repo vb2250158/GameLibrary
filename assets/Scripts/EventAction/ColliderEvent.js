@@ -17,7 +17,7 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        tag: 0,
+        targetTag: 0,
         enterEvenList: {
             default: [],
             type: cc.Component.EventHandler
@@ -41,7 +41,7 @@ cc.Class({
     },
     onCollisionEnter: function (other) {
         let self = this;
-        if (self.tag == other.tag) {
+        if (self.targetTag == other.tag) {
             for (let index = 0; index < self.enterEvenList.length; index++) {
                 const element = self.enterEvenList[index];
                 element.emit([element.customEventData, other]);

@@ -135,7 +135,7 @@
       "__id__": 1
     },
     "_enabled": true,
-    "tag": 0,
+    "targetTag": 0,
     "enterEvenList": [
       {
         "__id__": 5
