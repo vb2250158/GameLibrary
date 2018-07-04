@@ -33,13 +33,21 @@ cc.Class({
     start() {
         let self = this;
         self._timed = self.timer;
-       
+
     },
-    setTimer(timer){
-        this.timer=parseInt(timer);
+    setTimer(timer) {
+        this.timer = parseInt(timer);
     },
-    addTimer(size){
-        this.timer-=parseInt(size);
+    addTimer() {
+        for (let index = 0; index < arguments.length; index++) {
+            const element = arguments[index];
+            if (typeof (element) == "string") {
+
+                this.timer -= parseInt(element);
+                return;
+            }
+        }
+        //this.timer-=parseInt(size);
     }
     ,
 
