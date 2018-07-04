@@ -274,6 +274,7 @@
       "__id__": 1
     },
     "_enabled": true,
+    "targetTag": 0,
     "enterEvenList": [
       {
         "__id__": 15
@@ -312,7 +313,7 @@
     },
     "_enabled": true,
     "CreateObject": {
-      "__uuid__": "86fcba5e-097f-44b7-aab1-151d7db28872"
+      "__uuid__": "7db32f53-9b72-4039-bcd0-14e165f94a66"
     }
   },
   {
