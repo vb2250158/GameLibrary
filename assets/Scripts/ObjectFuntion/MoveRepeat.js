@@ -32,15 +32,65 @@ cc.Class({
     },
     update(dt) {
         let self = this;
-       // self.node.position = self.node.position.add(new cc.Vec2(self.speed.x * dt, self.speed.y * dt));   
-       self.node.x += self.speed.x * dt;
-       self.node.y += self.speed.y * dt;
+        self.node.x += self.speed.x * dt;
+        self.node.y += self.speed.y * dt;
     },
-    addXSpeed(ev,value){
-        this.speed.x +=  parseInt( value);
+    /**
+     * 添加x速度
+     */
+    addXSpeed() {
+
+        for (let index = 0; index < arguments.length; index++) {
+            const element = arguments[index];
+
+            if (typeof (element) == "string") {
+                this.speed.x += parseInt(element);
+                return;
+            }
+        }
     },
-    addYSpeed(ev,value){
-        
-        this.speed.y += parseInt( value);
-    }
+    /**
+     * 添加y速度
+     */
+    addYSpeed() {
+        for (let index = 0; index < arguments.length; index++) {
+            const element = arguments[index];
+
+            if (typeof (element) == "string") {
+                this.speed.y += parseInt(element);
+                return;
+            }
+        }
+
+    },
+    /**
+     * 设置y速度
+     */
+    setYSpeed() {
+        for (let index = 0; index < arguments.length; index++) {
+            const element = arguments[index];
+
+            if (typeof (element) == "string") {
+                this.speed.y = parseInt(element);
+                return;
+            }
+        }
+
+
+    },
+    /**
+     * 设置x速度
+     */
+    setXSpeed() {
+        for (let index = 0; index < arguments.length; index++) {
+            const element = arguments[index];
+
+            if (typeof (element) == "string") {
+                this.speed.x = parseInt(element);
+                return;
+            }
+        }
+
+
+    },
 });

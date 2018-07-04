@@ -15,12 +15,11 @@ cc.Class({
         if (this.loadSetting) {
             this.upSet();
         }
-
     },
     upSet() {
 
         let value = this.node.getComponent(this.cmponentNmae)[this.valueName];
-        
+        console.log("emmm");
         if (this.X) {
             value.x = -value.x;
         }
