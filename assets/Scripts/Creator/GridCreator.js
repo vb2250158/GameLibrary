@@ -3,7 +3,7 @@ cc.Class({
 
     properties: {
 
-        preformList: [require("../Library/Item")],
+        preformList: [require("Item")],
         _itemList: [cc.Node],
 
         /**

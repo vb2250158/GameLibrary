@@ -2,28 +2,8 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-<<<<<<< HEAD
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
-        preformList: [require("../Library/Item")],
-        _itemList: [cc.Node],
-=======
         preformList: [require("../LibraryFuntion/Item")],
 
->>>>>>> 农场跑酷
         /**
          * 区域随机范围
          */
@@ -48,6 +28,7 @@ cc.Class({
      * 在区域内随机构建
      */
     build() {
+
         let self = this;
         let randomNumber = cc.random0To1();
         let targetNmber = 0;
@@ -71,11 +52,24 @@ cc.Class({
                     var newNode = cc.instantiate(element.itemObject);
                     //设置父对象
                     newNode.parent = self.node;
+        
+                    //      设置父对象
+                    while (newNode.parent.parent != undefined) {
+
+                        newNode.parent = newNode.parent.parent;
+             
+
+                    }
+                    let worldXY = new cc.Vec2();
                     //初始化位置
-                    newNode.x = cc.randomMinus1To1() * self.randomRange.x + self._offset.x;
-                    newNode.y = cc.randomMinus1To1() * self.randomRange.y + self._offset.y;
-                    //加入数组
-                    self._itemList.push(newNode);
+                    worldXY.x = cc.randomMinus1To1() * self.randomRange.x + self._offset.x + self.node.convertToWorldSpace(cc.v2(0, 0)).x;
+                    worldXY.y = cc.randomMinus1To1() * self.randomRange.y + self._offset.y + self.node.convertToWorldSpace(cc.v2(0, 0)).y;
+
+                    //恢复位置
+                    newNode.x = worldXY.x;
+                    newNode.y = worldXY.y;
+
+
                     break;
                 }
             }
@@ -84,6 +78,7 @@ cc.Class({
 
 
 
-    }
+    },
+
     // update (dt) {},
 });

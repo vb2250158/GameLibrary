@@ -17,6 +17,10 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
+<<<<<<< HEAD
+=======
+        targetTag: 0,
+>>>>>>> 农场跑酷
         enterEvenList: {
             default: [],
             type: cc.Component.EventHandler
@@ -39,10 +43,19 @@ cc.Class({
        
     },
     onCollisionEnter: function (other) {
+<<<<<<< HEAD
         let self=this;
         for (let index = 0; index < self.enterEvenList.length; index++) {
             const element = self.enterEvenList[index];
             element.emit([element.customEventData,other]);
+=======
+        let self = this;
+        if (self.targetTag == other.tag) {
+            for (let index = 0; index < self.enterEvenList.length; index++) {
+                const element = self.enterEvenList[index];
+                element.emit([element.customEventData, other]);
+            }
+>>>>>>> 农场跑酷
         }
       
     },
