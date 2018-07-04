@@ -10,7 +10,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "RBubble",
+    "_name": "Boom",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -36,6 +36,9 @@
         "__id__": 8
       },
       {
+        "__id__": 10
+      },
+      {
         "__id__": 11
       },
       {
@@ -45,25 +48,22 @@
         "__id__": 13
       },
       {
-        "__id__": 14
+        "__id__": 16
       },
       {
         "__id__": 17
-      },
-      {
-        "__id__": 18
       }
     ],
     "_prefab": {
-      "__id__": 19
+      "__id__": 18
     },
     "_id": "",
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_cascadeOpacityEnabled": true,
@@ -84,7 +84,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": 30
+      "y": -4
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -171,8 +171,8 @@
     "valueName": "speed",
     "x": {
       "__type__": "cc.Vec2",
-      "x": -100,
-      "y": 0
+      "x": -50,
+      "y": 50
     },
     "y": {
       "__type__": "cc.Vec2",
@@ -202,9 +202,6 @@
     "evenList": [
       {
         "__id__": 9
-      },
-      {
-        "__id__": 10
       }
     ]
   },
@@ -213,18 +210,9 @@
     "target": {
       "__id__": 1
     },
-    "component": "DestroyByValue",
-    "handler": "minusNumber",
-    "customEventData": "100"
-  },
-  {
-    "__type__": "cc.ClickEvent",
-    "target": {
-      "__id__": 1
-    },
     "component": "Fraction",
-    "handler": "scoreUp",
-    "customEventData": "1"
+    "handler": "GameEnd",
+    "customEventData": ""
   },
   {
     "__type__": "813f0kWt31Mm4ML3xqOAOrl",
@@ -258,7 +246,7 @@
       "__id__": 1
     },
     "_enabled": true,
-    "tag": 0,
+    "tag": 1,
     "_offset": {
       "__type__": "cc.Vec2",
       "x": 0,
@@ -277,10 +265,10 @@
     "targetTag": 0,
     "enterEvenList": [
       {
-        "__id__": 15
+        "__id__": 14
       },
       {
-        "__id__": 16
+        "__id__": 15
       }
     ],
     "exitEvenList": [],
@@ -313,7 +301,7 @@
     },
     "_enabled": true,
     "CreateObject": {
-      "__uuid__": "7db32f53-9b72-4039-bcd0-14e165f94a66"
+      "__uuid__": "99d6afe7-878d-48f6-906c-ecd7e917c8b5"
     }
   },
   {
@@ -331,9 +319,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "206e14eb-f0a2-4807-a3ab-965aca28b4af"
+      "__uuid__": "5bb0a013-408d-42b7-9300-53d373d7ad45"
     },
-    "fileId": "a4+YkPBptCDKQKEK3nb7gx",
+    "fileId": "c8Sr/2NcpBcLj1DnFSI5hP",
     "sync": false
   }
 ]

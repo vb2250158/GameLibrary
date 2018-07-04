@@ -10,7 +10,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Bp",
+    "_name": "BBp",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -80,15 +80,15 @@
     "playOnLoad": true,
     "_autoRemoveOnFinish": true,
     "_totalParticles": 150,
-    "_duration": 0.1,
-    "_emissionRate": 50,
+    "_duration": 0.3,
+    "_emissionRate": 999,
     "_life": 0.3,
     "_lifeVar": 0,
     "_startColor": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "_startColorVar": {
@@ -101,8 +101,8 @@
     "_endColor": {
       "__type__": "cc.Color",
       "r": 255,
-      "g": 255,
-      "b": 255,
+      "g": 0,
+      "b": 0,
       "a": 0
     },
     "_endColorVar": {
@@ -112,8 +112,8 @@
       "b": 0,
       "a": 0
     },
-    "_angle": 90,
-    "_angleVar": 45,
+    "_angle": 0,
+    "_angleVar": 180,
     "_startSize": 50,
     "_startSizeVar": 0,
     "_endSize": 0,
@@ -160,9 +160,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "7db32f53-9b72-4039-bcd0-14e165f94a66"
+      "__uuid__": "99d6afe7-878d-48f6-906c-ecd7e917c8b5"
     },
-    "fileId": "7dR3YMNw1Ls6xqNkamdGzL",
+    "fileId": "49E5lGkDtAmYCZLGJ/DvzH",
     "sync": false
   }
 ]

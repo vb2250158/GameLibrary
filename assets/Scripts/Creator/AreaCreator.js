@@ -20,14 +20,24 @@ cc.Class({
     start() {
 
     },
-    addNumber(addValue) {
-        this.number += addValue;
+    addNumber() {
+        for (let index = 0; index < arguments.length; index++) {
+            const element = arguments[index];
+
+            if (typeof (element) == "string") {
+                this.number += parseInt(element);
+                return;
+            }
+        }
+
+
     },
 
     /**
      * 在区域内随机构建
      */
     build() {
+
         let self = this;
         let randomNumber = cc.random0To1();
         let targetNmber = 0;
@@ -54,8 +64,7 @@ cc.Class({
                     //初始化位置
                     newNode.x = cc.randomMinus1To1() * self.randomRange.x + self._offset.x;
                     newNode.y = cc.randomMinus1To1() * self.randomRange.y + self._offset.y;
-                    //加入数组
-                    self._itemList.push(newNode);
+
                     break;
                 }
             }
