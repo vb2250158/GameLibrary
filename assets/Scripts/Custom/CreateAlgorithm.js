@@ -39,11 +39,7 @@ cc.Class({
          * 当前的道路数组
          */
         theNumber: [],
-        /**
-         * 上一次是否产生了拐角
-         */
-        _upCorner: false
-
+     
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -59,17 +55,8 @@ cc.Class({
         //   console.log(this.theNumber);        
     },
     createNextLine() {
-        /**
-         * 如果产生了拐角则直接创建
-         */
-        if (this._upCorner) {
-            this._upCorner = false;
-            this._createComponent.build(this.theNumber);
-        } else {
-            this._createComponent.build(this.theNumber);
-            this.theNumber = this.getNextLineNmbers(this.theNumber);
-        }
-
+        this._createComponent.build(this.theNumber);
+        this.theNumber = this.getNextLineNmbers(this.theNumber);
     },
 
     /**
@@ -93,12 +80,10 @@ cc.Class({
             //随机获取起始点
             awakeNumber[randomIndex] = 0;
             //  console.log(awakeNumber);
-            //调用回调
             fx(randomIndex);
         }
         return awakeNumber;
     },
-
     /**
      * 随机生成下一行
      * 0是路
@@ -161,17 +146,13 @@ cc.Class({
                     //生成偏移点
                     let newPosi = parseInt(cc.random0To1() * upNumber.length);
                     let upPosi = self._nowPosis[index];
-                    //产生了拐角
-                    this._upCorner = true;
-
 
                     //降低步数
-                    if (newPosi - upPosi > 2) {
-                        newPosi = upPosi + 2;
-                    }
-                    
-                    if (newPosi - upPosi < -2) {
-                        newPosi = upPosi - 2;
+                    if (newPosi-upPosi>2) {
+                        newPosi=upPosi+2;
+                    } 
+                    if (newPosi-upPosi<-2) {
+                        newPosi=upPosi-2;
                     }
 
 

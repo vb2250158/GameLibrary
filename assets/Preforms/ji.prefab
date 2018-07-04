@@ -99,7 +99,7 @@
   },
   {
     "__type__": "Item",
-    "probability": 49,
+    "probability": 45,
     "itemObject": {
       "__uuid__": "cd6a6275-e48f-4035-9656-07803344cc44"
     }
@@ -113,7 +113,7 @@
   },
   {
     "__type__": "Item",
-    "probability": 1,
+    "probability": 5,
     "itemObject": {
       "__uuid__": "b51a81ca-7cb1-4ef4-847b-f4b7b36d9d38"
     }
