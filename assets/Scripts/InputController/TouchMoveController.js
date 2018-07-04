@@ -4,6 +4,7 @@ cc.Class({
     properties: {
         lockX: false,
         lockY: false,
+        _isTouch: false
     },
 
     // LIFE-CYCLE CALLBACKS:

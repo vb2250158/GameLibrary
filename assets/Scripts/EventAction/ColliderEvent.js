@@ -17,7 +17,6 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        tag: 0,
         enterEvenList: {
             default: [],
             type: cc.Component.EventHandler
@@ -37,31 +36,29 @@ cc.Class({
     // onLoad () {},
 
     start() {
-
+       
     },
     onCollisionEnter: function (other) {
-        let self = this;
-        if (self.tag == other.tag) {
-            for (let index = 0; index < self.enterEvenList.length; index++) {
-                const element = self.enterEvenList[index];
-                element.emit([element.customEventData, other]);
-            }
+        let self=this;
+        for (let index = 0; index < self.enterEvenList.length; index++) {
+            const element = self.enterEvenList[index];
+            element.emit([element.customEventData,other]);
         }
-
+      
     },
-
+   
     onCollisionExit: function (other) {
-        let self = this;
+        let self=this;
         for (let index = 0; index < self.exitEvenList.length; index++) {
             const element = self.exitEvenList[index];
-            element.emit([element.customEventData, other]);
+            element.emit([element.customEventData,other]);
         }
     },
     onCollisionStay: function (other) {
-        let self = this;
+        let self=this;
         for (let index = 0; index < self.stayEvenList.length; index++) {
             const element = self.stayEvenList[index];
-            element.emit([element.customEventData, other]);
+            element.emit([element.customEventData,other]);
         }
     },
     // update (dt) {},

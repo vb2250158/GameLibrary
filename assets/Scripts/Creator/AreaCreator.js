@@ -2,8 +2,23 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
+        // foo: {
+        //     // ATTRIBUTES:
+        //     default: null,        // The default value will be used only when the component attaching
+        //                           // to a node for the first time
+        //     type: cc.SpriteFrame, // optional, default is typeof default
+        //     serializable: true,   // optional, default is true
+        // },
+        // bar: {
+        //     get () {
+        //         return this._bar;
+        //     },
+        //     set (value) {
+        //         this._bar = value;
+        //     }
+        // },
         preformList: [require("../Library/Item")],
-
+        _itemList: [cc.Node],
         /**
          * 区域随机范围
          */
@@ -18,7 +33,7 @@ cc.Class({
     // onLoad () {},
 
     start() {
-        
+
     },
     addNumber(addValue) {
         this.number += addValue;
@@ -28,7 +43,6 @@ cc.Class({
      * 在区域内随机构建
      */
     build() {
-
         let self = this;
         let randomNumber = cc.random0To1();
         let targetNmber = 0;
@@ -55,7 +69,8 @@ cc.Class({
                     //初始化位置
                     newNode.x = cc.randomMinus1To1() * self.randomRange.x + self._offset.x;
                     newNode.y = cc.randomMinus1To1() * self.randomRange.y + self._offset.y;
-                   
+                    //加入数组
+                    self._itemList.push(newNode);
                     break;
                 }
             }
@@ -64,7 +79,6 @@ cc.Class({
 
 
 
-    },
-    
+    }
     // update (dt) {},
 });
