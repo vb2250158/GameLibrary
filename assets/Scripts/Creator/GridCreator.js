@@ -1,11 +1,9 @@
-
-
 cc.Class({
     extends: cc.Component,
 
     properties: {
 
-        preformList: [require("../Library/Item")],
+        preformList: [require("Item")],
         _itemList: [cc.Node],
 
         /**

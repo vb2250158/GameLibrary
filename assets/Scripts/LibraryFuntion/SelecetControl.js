@@ -17,37 +17,27 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        value: 1,
-
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
+
     start() {
 
     },
     /**
-     * 值减少
-     * @param {*} size 
+     * 当前对象设置为选中状态
      */
-    minusNumber() {
-        
-        for (let index = 0; index < arguments.length; index++) {
-            const element = arguments[index];
-            
-            if (typeof (element) == "string") {
-                this.value -= parseInt(element);
-                if (this.value <= 0) {
-                    //销毁对象
-                    this.node.destroy();
-                }
-                return;
-            }
-        }
+    selectObject() {
+        director._selectObject = this.node;
+    },
+    addX(){
 
+    },
+    addY(value){
+        director._selectObject.y += parseInt(value);
     }
 
-
-    // update (dt) {},
+        // update (dt) {},
 });

@@ -17,37 +17,45 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        value: 1,
-
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
+
     start() {
 
     },
     /**
-     * 值减少
-     * @param {*} size 
+     * 分数上升
+     * @param {Number} number 分数
      */
-    minusNumber() {
-        
+    scoreUp() {
         for (let index = 0; index < arguments.length; index++) {
             const element = arguments[index];
-            
             if (typeof (element) == "string") {
-                this.value -= parseInt(element);
-                if (this.value <= 0) {
-                    //销毁对象
-                    this.node.destroy();
-                }
+              //  consloe.log(typeof (element) );
+                console.log(typeof (element) );
+                director.scoreUp(parseInt(element));
                 return;
             }
         }
 
-    }
+    },
+    GameEnd() {
+        director.GameEnd();
+    },
+    /**
+     * 加载场景
+     * @param {*} sceneName 
+     */
+    SceneLoad(sceneName, barckName) {
+        if (typeof (sceneName) == "string") {
+            cc.director.loadScene(sceneName);
+        } else {
+            cc.director.loadScene(barckName);
+        }
 
-
+    },
     // update (dt) {},
 });

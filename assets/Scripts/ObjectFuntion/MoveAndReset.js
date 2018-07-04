@@ -1,13 +1,3 @@
-// Learn cc.Class:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/class.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/class.html
-// Learn Attribute:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/reference/attributes.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
-
 cc.Class({
     extends: cc.Component,
 
@@ -34,6 +24,7 @@ cc.Class({
          * 重置时位置大小
          */
         resetSize: 0,
+        vertical: true
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -47,17 +38,30 @@ cc.Class({
      * 重置背景
      */
     resetBg() {
-        this.node.y = 0;
+        if (this.vertical) {
+            this.node.y = 0;
+        } else {
+            this.node.x = 0;
+        }
     },
     update(dt) {
-        this.node.y -= dt * this.speed;
+        if (this.vertical) {
+            this.node.y -= dt * this.speed;
 
-        if (this.node.y <= this.resetSize) {
-            this.resetBg();
+            if (this.node.y <= this.resetSize) {
+                this.resetBg();
+            }
+        } else {
+          //  console.log("?!",  this.speed);
+            this.node.x -= dt * this.speed;
+            if (this.node.x <= this.resetSize) {
+                
+                this.resetBg();
+            }
         }
     },
     speedUp(ev, value) {
-     
+
         this.speed += parseInt(value);
     }
 

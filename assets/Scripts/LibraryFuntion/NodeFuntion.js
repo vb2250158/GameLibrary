@@ -17,37 +17,44 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        value: 1,
-
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
+
     start() {
 
     },
-    /**
-     * 值减少
-     * @param {*} size 
-     */
-    minusNumber() {
-        
+    setX(ev, value) {
+        this.node.x = parseInt(value);
+    },
+    setY(ev, value) {
+        this.node.y = parseInt(value);
+    },
+    addY() {
+
         for (let index = 0; index < arguments.length; index++) {
             const element = arguments[index];
-            
+
             if (typeof (element) == "string") {
-                this.value -= parseInt(element);
-                if (this.value <= 0) {
-                    //销毁对象
-                    this.node.destroy();
-                }
+                this.node.y += parseInt(element);
+
                 return;
             }
         }
+    },
+    setZIndex() {
+        for (let index = 0; index < arguments.length; index++) {
+            const element = arguments[index];
 
+            if (typeof (element) == "string") {
+                this.node.zIndex = element;
+
+                return;
+            }
+        }
     }
-
 
     // update (dt) {},
 });
