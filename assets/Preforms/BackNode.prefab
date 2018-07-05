@@ -111,7 +111,6 @@
         "__id__": 6
       }
     ],
-    "_itemList": [],
     "randomRange": {
       "__type__": "cc.Vec2",
       "x": 0,
@@ -126,23 +125,23 @@
   },
   {
     "__type__": "Item",
-    "probability": 1,
+    "probability": 90,
     "itemObject": {
       "__uuid__": "cff1947a-d5f9-4b7a-9977-f78b598929b3"
     }
   },
   {
     "__type__": "Item",
-    "probability": 1,
+    "probability": 10,
     "itemObject": {
       "__uuid__": "c1b0d820-5ee3-42e9-9b7f-1f929685f48d"
     }
   },
   {
     "__type__": "Item",
-    "probability": 1,
+    "probability": 2,
     "itemObject": {
-      "__uuid__": "9c5e4d5f-5512-48e4-ac56-622e44cbda18"
+      "__uuid__": "1867e5d0-1586-4f52-8d13-29a10a110f0f"
     }
   },
   {

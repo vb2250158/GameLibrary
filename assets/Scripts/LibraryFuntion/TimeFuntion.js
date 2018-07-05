@@ -12,30 +12,73 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
+
+        timer: 1,
+        _timed: 0,
+       
+        startEvenList: {
+            default: [],
+            type: cc.Component.EventHandler
+        },
+        endEvenList: {
+            default: [],
+            type: cc.Component.EventHandler
+        }, runEvenList: {
+            default: [],
+            type: cc.Component.EventHandler
+        },
+        _end: true
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
 
-    start () {
+    start() {
 
     },
+    setTimer(timer) {
+        this.timer = parseInt(timer);
+    },
+    addTimer(size) {
+        this.timer -= parseInt(size);
+    }
+    ,
 
-    // update (dt) {},
+    update(dt) {
+        let self = this;
+        if (!this._end) {
+            if (self._timed <= 0) {
+                this._end = true;
+                this.emitEvent(this.endEvenList);
+            } else {
+                self._timed -= dt;
+                console.log( director._selectObject.name);
+                this.emitEvent(this.runEvenList);
+            }
+        }
+    },
+    /**
+     * 开始运行
+     */
+    startRun() {
+        this._timed = this.timer;
+        this._end = false;
+        this.emitEvent(this.startEvenList);
+    },
+    emitEvent(evenList) {
+        for (let index = 0; index < evenList.length; index++) {
+            const element = evenList[index];
+            element.emit([element.customEventData]);
+        }
+    },
+    setTimeSize() {
+        for (let index = 0; index < arguments.length; index++) {
+            const element = arguments[index];
+            if (typeof (element) == "string") {
+                director.timeScale = parseFloat(element);
+                return;
+            }
+        }
+    }
 });

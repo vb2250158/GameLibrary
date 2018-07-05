@@ -1,3 +1,13 @@
+// Learn cc.Class:
+//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/class.html
+//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/class.html
+// Learn Attribute:
+//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/reference/attributes.html
+//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/reference/attributes.html
+// Learn life-cycle callbacks:
+//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
+//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
+
 cc.Class({
     extends: cc.Component,
 
@@ -26,48 +36,18 @@ cc.Class({
     start() {
 
     },
-    switchActive() {
-        if (this.node.active) {
-            this.node.active = false;
-        } else {
-            this.node.active = true;
-        }
-
-    }, active() {
-
-        this.node.active = true;
-
-
-    },
-    setX(ev, value) {
-        this.node.x = parseInt(value);
-    },
-    setY(ev, value) {
-        this.node.y = parseInt(value);
-    },
-    addY() {
-
+    emit() {
         for (let index = 0; index < arguments.length; index++) {
             const element = arguments[index];
 
             if (typeof (element) == "string") {
-                this.node.y += parseInt(element);
+                director.node.emit(element);
 
                 return;
             }
         }
-    },
-    setZIndex() {
-        for (let index = 0; index < arguments.length; index++) {
-            const element = arguments[index];
 
-            if (typeof (element) == "string") {
-                this.node.zIndex = element;
 
-                return;
-            }
-        }
     }
-
     // update (dt) {},
 });

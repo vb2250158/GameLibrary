@@ -1,5 +1,5 @@
 cc.Class({
-    extends: cc.Component,
+    extends: require("BaseCreator"),
 
     properties: {
         preformList: [require("../LibraryFuntion/Item")],
@@ -54,8 +54,7 @@ cc.Class({
                     //初始化位置
                     newNode.x = cc.randomMinus1To1() * self.randomRange.x + self._offset.x;
                     newNode.y = cc.randomMinus1To1() * self.randomRange.y + self._offset.y;
-                    //加入数组
-                    self._itemList.push(newNode);
+
                     break;
                 }
             }

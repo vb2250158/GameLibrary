@@ -42,17 +42,17 @@ cc.Class({
         /**
          * 是否开启物理系统
          */
-        Physics:true,
+        Physics: true,
         /**
          * 游戏结束倒计时
          */
-        endTimer:300,
+        endTimer: 300,
 
-        _selectObject:null,
+        _selectObject: null,
+
+        timeScale: 1
 
 
-        
-        
 
     },
 
@@ -88,14 +88,14 @@ cc.Class({
             self.isGameEnd = true;
             director.node.emit("GameEnd", self.gameFraction);
         }
-     
+
     },
     update(dt) {
         if (!this.isGameEnd) {
             this.gameFraction.liveTimer += dt;
         }
         //倒计时结束游戏结束
-        if (this.gameFraction.liveTimer>=this.endTimer) {
+        if (this.gameFraction.liveTimer >= this.endTimer) {
             this.GameEnd();
         }
     },
@@ -105,8 +105,15 @@ cc.Class({
      */
     scoreUp(score) {
         if (!this.isGameEnd) {
-        //  console.log(score);
+            //  console.log(score);
             this.gameFraction.score += parseInt(score);
         }
+    },
+    emit() {
+        console.log("喵喵喵?");
+        this.node.emit(arguments);
+    },
+    on(){
+        this.node.on(arguments);
     }
 });

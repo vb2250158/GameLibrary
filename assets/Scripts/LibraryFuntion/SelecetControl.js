@@ -1,3 +1,7 @@
+/**
+ * 
+ * 选中的对象控制
+ */
 cc.Class({
     extends: cc.Component,
 
@@ -30,14 +34,18 @@ cc.Class({
      * 当前对象设置为选中状态
      */
     selectObject() {
+        console.log(this.node.name);
         director._selectObject = this.node;
     },
-    addX(){
+    addX() {
 
     },
-    addY(value){
+    /**
+     * 添加Y位移
+     */
+    addY(value) {
         director._selectObject.y += parseInt(value);
     }
 
-        // update (dt) {},
+    // update (dt) {},
 });
