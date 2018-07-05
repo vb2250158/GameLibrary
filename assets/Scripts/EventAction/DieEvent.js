@@ -27,14 +27,15 @@ cc.Class({
 
     // onLoad () {},
 
-    start () {
+    start() {
 
     },
-    onDestroy(){
+    onDestroy() {
+        let self = this;
         for (let index = 0; index < self.evenList.length; index++) {
             const element = self.evenList[index];
-           // console.log(element);
-            element.emit([ev,element.customEventData]);
+            // console.log(element);
+            element.emit([this,element.customEventData]);
         }
     }
     // update (dt) {},
