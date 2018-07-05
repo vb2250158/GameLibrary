@@ -46,7 +46,7 @@ cc.Class({
     },
     update(dt) {
         if (this.vertical) {
-            this.node.y -= dt * this.speed;
+            this.node.y -= dt * this.speed * director.timeScale;
 
             if (this.node.y <= this.resetSize) {
                 this.resetBg();

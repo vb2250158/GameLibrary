@@ -1,5 +1,5 @@
 cc.Class({
-    extends: cc.Component,
+    extends: require("BaseCreator"),
 
     properties: {
 
@@ -24,7 +24,7 @@ cc.Class({
 
 
     start() {
-      
+
     },
     addNumber(addValue) {
         this.number += addValue;
