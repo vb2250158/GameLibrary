@@ -15,7 +15,7 @@ cc.Class({
 
         timer: 1,
         _timed: 0,
-       
+
         startEvenList: {
             default: [],
             type: cc.Component.EventHandler
@@ -53,10 +53,17 @@ cc.Class({
                 this.emitEvent(this.endEvenList);
             } else {
                 self._timed -= dt;
-                console.log( director._selectObject.name);
                 this.emitEvent(this.runEvenList);
-            }
+            }   
+            
         }
+    },
+    /**
+     * 停止
+     */
+    stop(){
+        this._end = true;
+        this.emitEvent(this.endEvenList);
     },
     /**
      * 开始运行

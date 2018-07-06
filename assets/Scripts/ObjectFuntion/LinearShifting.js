@@ -1,6 +1,6 @@
 /**
- * 
- * 选中的对象控制
+ * 线性位移
+ * 子对象只会被约束在线上
  */
 cc.Class({
     extends: cc.Component,
@@ -27,31 +27,9 @@ cc.Class({
 
     // onLoad () {},
 
-    start() {
+    start () {
 
     },
-    /**
-     * 当前对象设置为选中状态
-     */
-    selectObject() {
-        console.log(this.node.name);
-        director._selectObject = this.node;
-    },
-    addX() {
-
-    },
-    /**
-     * 添加Y位移
-     */
-    addY(value) {
-        director._selectObject.y += parseInt(value);
-    },
-    /**
-     * 将选中对象设置为子对象
-     */
-    BecomeAChild(){
-        director._selectObject.parent=this.node;
-    }
 
     // update (dt) {},
 });
