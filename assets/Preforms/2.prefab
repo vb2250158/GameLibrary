@@ -330,7 +330,7 @@
     },
     "component": "SelecetControl",
     "handler": "addY",
-    "customEventData": "-5"
+    "customEventData": "-1"
   },
   {
     "__type__": "cc.ClickEvent",

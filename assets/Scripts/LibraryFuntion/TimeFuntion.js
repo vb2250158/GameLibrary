@@ -53,7 +53,7 @@ cc.Class({
                 this.emitEvent(this.endEvenList);
             } else {
                 self._timed -= dt;
-                console.log( director._selectObject.name);
+           
                 this.emitEvent(this.runEvenList);
             }
         }

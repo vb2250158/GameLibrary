@@ -3,7 +3,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-     
+
         timer: 1,
         _timed: 0,
         evenList: {
@@ -19,13 +19,13 @@ cc.Class({
     start() {
         let self = this;
         self._timed = self.timer;
-       
+
     },
-    setTimer(timer){
-        this.timer=parseInt(timer);
+    setTimer(timer) {
+        this.timer = parseInt(timer);
     },
-    addTimer(size){
-        this.timer-=parseInt(size);
+    addTimer(size) {
+        this.timer += parseInt(size);
     }
     ,
 

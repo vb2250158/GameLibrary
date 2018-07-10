@@ -18,7 +18,6 @@ cc.Class({
          * 中心偏移量
          */
         _offset: cc.Vec2,
-
     },
 
 
@@ -49,6 +48,9 @@ cc.Class({
         for (let i = 0; i < self.preformList.length; i++) {
             allProbability += self.preformList[i].probability;
         }
+        /**
+         * 构建所有对象
+         */
         for (let i = 0; i < number.y; i++) {
             y = i;
             //构建一行对象
@@ -84,6 +86,29 @@ cc.Class({
 
 
 
-    }
+    },
+    /**
+     * 在格子组中构建一个对象
+     * @param {*} itemObject 要构建的物体
+     * @param {*} x x的位置 第几行
+     * @param {*} y y的位置 第几列
+     */
+    CreatorItem(itemObject, x = 0, y = 0) {
+        let self = this;
+
+
+        //创建
+        var newNode = cc.instantiate(itemObject);
+        //设置父对象
+        newNode.parent = self.node;
+        //设置节点的高和宽
+        newNode.width = self.gridSize.x;
+        newNode.height = self.gridSize.y;
+        //初始化位置
+        newNode.x = -(newNode.parent.width / 2) + x * newNode.width + self._offset.x;
+        newNode.y = y * newNode.height + self._offset.y;
+        //     console.log(itemObject, newNode.x, newNode.y);
+    },
+
     // update (dt) {},
 });

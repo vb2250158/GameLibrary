@@ -389,12 +389,14 @@
       "__id__": 1
     },
     "_enabled": true,
-    "timer": 5,
+    "timer": 3,
     "_timed": 0,
-    "runEvenList": [
+    "startEvenList": [
       {
         "__id__": 16
-      },
+      }
+    ],
+    "endEvenList": [
       {
         "__id__": 17
       },
@@ -402,8 +404,7 @@
         "__id__": 18
       }
     ],
-    "startEvenList": [],
-    "endEvenList": [
+    "runEvenList": [
       {
         "__id__": 19
       },
@@ -421,27 +422,9 @@
     "target": {
       "__id__": 1
     },
-    "component": "TimeFuntion",
-    "handler": "setTimeSize",
-    "customEventData": "0.5"
-  },
-  {
-    "__type__": "cc.ClickEvent",
-    "target": {
-      "__id__": 1
-    },
-    "component": "cc.BoxCollider",
-    "handler": "destroy",
-    "customEventData": ""
-  },
-  {
-    "__type__": "cc.ClickEvent",
-    "target": {
-      "__id__": 2
-    },
-    "component": "cc.ParticleSystem",
-    "handler": "destroy",
-    "customEventData": ""
+    "component": "GobalEventEmit",
+    "handler": "emit",
+    "customEventData": "SpeedDownEnd"
   },
   {
     "__type__": "cc.ClickEvent",
@@ -466,9 +449,27 @@
     "target": {
       "__id__": 1
     },
-    "component": "GobalEventEmit",
-    "handler": "emit",
-    "customEventData": "SpeedDownEnd"
+    "component": "TimeFuntion",
+    "handler": "setTimeSize",
+    "customEventData": "2"
+  },
+  {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 1
+    },
+    "component": "cc.BoxCollider",
+    "handler": "destroy",
+    "customEventData": ""
+  },
+  {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 2
+    },
+    "component": "cc.ParticleSystem",
+    "handler": "destroy",
+    "customEventData": ""
   },
   {
     "__type__": "7f457AokxpJ4aS3hcF6AWnw",

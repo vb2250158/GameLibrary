@@ -27,7 +27,7 @@
         "__id__": 4
       },
       {
-        "__id__": 5
+        "__id__": 7
       },
       {
         "__id__": 8
@@ -62,8 +62,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 146,
-      "height": 147
+      "width": 128,
+      "height": 128
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -93,7 +93,7 @@
       "__uuid__": "d75fece9-7ec8-49ab-8d08-555d58b6e32e"
     },
     "_type": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -118,26 +118,6 @@
     "liveTime": 10
   },
   {
-    "__type__": "cc.BoxCollider",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "tag": 0,
-    "_offset": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_size": {
-      "__type__": "cc.Size",
-      "width": 120,
-      "height": 120
-    }
-  },
-  {
     "__type__": "5934frLPlROQ5e2CpI964wf",
     "_name": "",
     "_objFlags": 0,
@@ -150,10 +130,10 @@
     "exitEvenList": [],
     "stayEvenList": [
       {
-        "__id__": 6
+        "__id__": 5
       },
       {
-        "__id__": 7
+        "__id__": 6
       }
     ]
   },
@@ -164,7 +144,7 @@
     },
     "component": "SelecetControl",
     "handler": "addY",
-    "customEventData": "-10"
+    "customEventData": "-50"
   },
   {
     "__type__": "cc.ClickEvent",
@@ -192,7 +172,7 @@
       "__id__": 1
     },
     "_enabled": true,
-    "value": 10
+    "value": 2
   },
   {
     "__type__": "0ee7cVWgmdBFI3HkcRf5L0R",
@@ -214,6 +194,22 @@
       "__id__": 1
     },
     "_enabled": true
+  },
+  {
+    "__type__": "cc.CircleCollider",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "tag": 0,
+    "_offset": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_radius": 45
   },
   {
     "__type__": "cc.PrefabInfo",
