@@ -10,7 +10,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "BackNode",
+    "_name": "Bullet ",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -22,13 +22,10 @@
       },
       {
         "__id__": 3
-      },
-      {
-        "__id__": 7
       }
     ],
     "_prefab": {
-      "__id__": 9
+      "__id__": 4
     },
     "_id": "",
     "_opacity": 255,
@@ -56,8 +53,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -9,
-      "y": 97
+      "x": 0,
+      "y": 0
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -73,7 +70,7 @@
     "node": {
       "__id__": 1
     },
-    "_enabled": false,
+    "_enabled": true,
     "_spriteFrame": {
       "__uuid__": "a23235d1-15db-4b95-8439-a2e005bfff91"
     },
@@ -93,80 +90,18 @@
     "_atlas": null
   },
   {
-    "__type__": "d6f0fmvQ7RLBY4U1O6ia2tu",
+    "__type__": "d8b9d5XAppFSIhtfwazviFC",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "preformList": [
-      {
-        "__id__": 4
-      },
-      {
-        "__id__": 5
-      },
-      {
-        "__id__": 6
-      }
-    ],
-    "_itemList": [],
-    "randomRange": {
+    "speed": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": 0
-    },
-    "number": 1,
-    "_offset": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
+      "y": 1000
     }
-  },
-  {
-    "__type__": "Item",
-    "probability": 1,
-    "itemObject": {
-      "__uuid__": "cff1947a-d5f9-4b7a-9977-f78b598929b3"
-    }
-  },
-  {
-    "__type__": "Item",
-    "probability": 1,
-    "itemObject": {
-      "__uuid__": "c1b0d820-5ee3-42e9-9b7f-1f929685f48d"
-    }
-  },
-  {
-    "__type__": "Item",
-    "probability": 1,
-    "itemObject": {
-      "__uuid__": "9c5e4d5f-5512-48e4-ac56-622e44cbda18"
-    }
-  },
-  {
-    "__type__": "e35896zXT5K6789dn/zAG8L",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "evenList": [
-      {
-        "__id__": 8
-      }
-    ]
-  },
-  {
-    "__type__": "cc.ClickEvent",
-    "target": {
-      "__id__": 1
-    },
-    "component": "AreaCreator",
-    "handler": "build",
-    "customEventData": ""
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -174,9 +109,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "bf7b24c2-1495-41b3-a42e-f2acb4cd363c"
+      "__uuid__": "341aeba3-2838-472a-87fb-e5c819592f89"
     },
-    "fileId": "b40h4KWtVH8r9IKHnGq1wJ",
+    "fileId": "32xAWrC01CZ78H7DKnKQ40",
     "sync": false
   }
 ]

@@ -113,7 +113,10 @@ cc.Class({
         console.log("喵喵喵?");
         this.node.emit(arguments);
     },
-    on(){
+    on() {
         this.node.on(arguments);
+    },
+    newValue(name, value) {
+        this[name] = value;
     }
 });

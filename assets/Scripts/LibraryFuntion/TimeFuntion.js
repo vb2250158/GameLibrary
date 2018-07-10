@@ -53,11 +53,7 @@ cc.Class({
                 this.emitEvent(this.endEvenList);
             } else {
                 self._timed -= dt;
-<<<<<<< HEAD
-                console.log( director._selectObject.name);
-=======
            
->>>>>>> 太空火箭
                 this.emitEvent(this.runEvenList);
             }
         }

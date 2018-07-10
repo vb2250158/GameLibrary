@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 /**
  * 太空火箭的物体生成算法
  * 该组件可以生成障碍物
@@ -8,7 +5,6 @@
  * 可以保证至少会生成一次障碍物才出现创建器偏移 
  * 并且在障碍物出现位置偏移时不进行任何创建
  */
->>>>>>> 太空火箭
 cc.Class({
     extends: require("BaseCreator"),
 
@@ -16,23 +12,6 @@ cc.Class({
         creatorList: {
             type: require("ItemCreate"),
             default: []
-<<<<<<< HEAD
-        }
-    },
-
-    // LIFE-CYCLE CALLBACKS:
-
-    // onLoad () {},
-
-    start() {
-
-    },
-    build() {
-        let index=this.getRandomIndex(this.creatorList);
-     //   console.log(index);
-  
-        this.creatorList[index].itemObject.build();
-=======
         },
         itemList: {
             type: require("Item"),
@@ -280,7 +259,6 @@ cc.Class({
                 this.itemList[this._modifiesitemID].probability += parseFloat(element);
             }
         }
->>>>>>> 太空火箭
     }
     ,
     getRandomIndex(preformList) {

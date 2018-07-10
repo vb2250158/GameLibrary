@@ -3,11 +3,6 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-<<<<<<< HEAD
-     
-=======
-
->>>>>>> 太空火箭
         timer: 1,
         _timed: 0,
         evenList: {

@@ -32,12 +32,42 @@ cc.Class({
      * @param {*} size 
      */
     minusNumber() {
-        
+
         for (let index = 0; index < arguments.length; index++) {
             const element = arguments[index];
-            
+
             if (typeof (element) == "string") {
                 this.value -= parseInt(element);
+                if (this.value <= 0) {
+                    //销毁对象
+                    this.node.destroy();
+                }
+                return;
+            }
+        }
+
+    }, minusNumberByGlobalVariable() {
+
+        for (let index = 0; index < arguments.length; index++) {
+            const element = arguments[index];
+
+            if (typeof (element) == "string") {
+                this.value -= director[element];
+                if (this.value <= 0) {
+                    //销毁对象
+                    this.node.destroy();
+                }
+                return;
+            }
+        }
+
+    },setNumberByGlobalVariable() {
+
+        for (let index = 0; index < arguments.length; index++) {
+            const element = arguments[index];
+
+            if (typeof (element) == "string") {
+                this.value = director[element];
                 if (this.value <= 0) {
                     //销毁对象
                     this.node.destroy();

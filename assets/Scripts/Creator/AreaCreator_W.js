@@ -52,12 +52,12 @@ cc.Class({
                     var newNode = cc.instantiate(element.itemObject);
                     //设置父对象
                     newNode.parent = self.node;
-        
+
                     //      设置父对象
                     while (newNode.parent.parent != undefined) {
 
                         newNode.parent = newNode.parent.parent;
-             
+
 
                     }
                     let worldXY = new cc.Vec2();
@@ -66,8 +66,8 @@ cc.Class({
                     worldXY.y = cc.randomMinus1To1() * self.randomRange.y + self._offset.y + self.node.convertToWorldSpace(cc.v2(0, 0)).y;
 
                     //恢复位置
-                    newNode.x = worldXY.x;
-                    newNode.y = worldXY.y;
+                    newNode.x = worldXY.x + newNode.width / 2;
+                    newNode.y = worldXY.y + newNode.height / 2;
 
 
                     break;
