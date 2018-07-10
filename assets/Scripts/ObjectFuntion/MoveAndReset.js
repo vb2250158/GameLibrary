@@ -62,7 +62,7 @@ cc.Class({
     },
     speedUp(ev, value) {
 
-        this.speed += parseInt(value);
+        this.speed += parseFloat(value);
     }
 
 });

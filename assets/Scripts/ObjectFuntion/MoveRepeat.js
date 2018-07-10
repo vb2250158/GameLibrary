@@ -30,7 +30,7 @@ cc.Class({
             const element = arguments[index];
 
             if (typeof (element) == "string") {
-                this.speed.x += parseInt(element);
+                this.speed.x += parseFloat(element);
                 return;
             }
         }
@@ -43,7 +43,7 @@ cc.Class({
             const element = arguments[index];
 
             if (typeof (element) == "string") {
-                this.speed.y += parseInt(element);
+                this.speed.y += parseFloat(element);
                 return;
             }
         }
@@ -57,7 +57,7 @@ cc.Class({
             const element = arguments[index];
 
             if (typeof (element) == "string") {
-                this.speed.y = parseInt(element);
+                this.speed.y = parseFloat(element);
                 return;
             }
         }
@@ -72,7 +72,7 @@ cc.Class({
             const element = arguments[index];
 
             if (typeof (element) == "string") {
-                this.speed.x = parseInt(element);
+                this.speed.x = parseFloat(element);
                 return;
             }
         }
