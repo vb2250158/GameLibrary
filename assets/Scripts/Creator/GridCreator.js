@@ -102,8 +102,8 @@ cc.Class({
         //设置父对象
         newNode.parent = self.node;
         //设置节点的高和宽
-        newNode.width = self.gridSize.x;
-        newNode.height = self.gridSize.y;
+        // newNode.width = self.gridSize.x;
+        // newNode.height = self.gridSize.y;
         //初始化位置
         newNode.x = -(newNode.parent.width / 2) + x * newNode.width + self._offset.x;
         newNode.y = y * newNode.height + self._offset.y;

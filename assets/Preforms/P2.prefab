@@ -72,19 +72,22 @@
     "_file": {
       "__uuid__": "b2687ac4-099e-403c-a192-ff477686f4f5"
     },
+    "_texture": {
+      "__uuid__": "062b5c5e-070c-428f-8534-b3516b95739d"
+    },
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "playOnLoad": true,
     "_autoRemoveOnFinish": false,
     "_totalParticles": 200,
     "_duration": 0.2,
-    "_emissionRate": 500,
+    "_emissionRate": 200,
     "_life": 0.2,
     "_lifeVar": 0,
     "_startColor": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 245,
+      "r": 255,
+      "g": 255,
       "b": 255,
       "a": 255
     },
@@ -111,9 +114,9 @@
     },
     "_angle": 0,
     "_angleVar": 180,
-    "_startSize": 100,
+    "_startSize": 50,
     "_startSizeVar": 0,
-    "_endSize": 100,
+    "_endSize": 50,
     "_endSizeVar": 0,
     "_startSpin": 0,
     "_startSpinVar": 0,
@@ -136,7 +139,7 @@
       "x": 0,
       "y": 0
     },
-    "_speed": 500,
+    "_speed": 300,
     "_speedVar": 50,
     "_tangentialAccel": 80,
     "_tangentialAccelVar": 0,

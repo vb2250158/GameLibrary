@@ -31,7 +31,7 @@
         "__id__": 7
       },
       {
-        "__id__": 8
+        "__id__": 11
       },
       {
         "__id__": 12
@@ -66,17 +66,17 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 50,
-      "height": 50
+      "width": 66,
+      "height": 66
     },
-    "_rotationX": 0,
-    "_rotationY": 0,
+    "_rotationX": 0.1,
+    "_rotationY": 0.1,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -157,
-      "y": 0
+      "x": -221,
+      "y": -165
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -152,15 +152,15 @@
       "__uuid__": "b2687ac4-099e-403c-a192-ff477686f4f5"
     },
     "_texture": {
-      "__uuid__": "baea5de0-1a3d-4bfa-8663-15fbb37b8a73"
+      "__uuid__": "062b5c5e-070c-428f-8534-b3516b95739d"
     },
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "playOnLoad": true,
-    "_autoRemoveOnFinish": true,
+    "_autoRemoveOnFinish": false,
     "_totalParticles": 200,
     "_duration": -1,
-    "_emissionRate": 399.9,
+    "_emissionRate": 100,
     "_life": 1,
     "_lifeVar": 0,
     "_startColor": {
@@ -193,8 +193,8 @@
     },
     "_angle": 0,
     "_angleVar": 180,
-    "_startSize": 50,
-    "_startSizeVar": 0,
+    "_startSize": 5,
+    "_startSizeVar": 10,
     "_endSize": 0,
     "_endSizeVar": 0,
     "_startSpin": 0,
@@ -218,19 +218,19 @@
       "x": 0,
       "y": 0
     },
-    "_speed": 0,
-    "_speedVar": 50,
+    "_speed": 100,
+    "_speedVar": 0,
     "_tangentialAccel": 0,
     "_tangentialAccelVar": 0,
     "_radialAccel": 0,
     "_radialAccelVar": 0,
     "_rotationIsDir": false,
-    "_startRadius": 10,
+    "_startRadius": -50,
     "_startRadiusVar": 0,
-    "_endRadius": 10,
+    "_endRadius": 50,
     "_endRadiusVar": 0,
-    "_rotatePerS": 360,
-    "_rotatePerSVar": 0,
+    "_rotatePerS": 0,
+    "_rotatePerSVar": 360,
     "_N$preview": true
   },
   {
@@ -243,32 +243,6 @@
     },
     "fileId": "acTBu2PKtFhbkNR1a1u1Yc",
     "sync": false
-  },
-  {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "_spriteFrame": {
-      "__uuid__": "7ffdcf54-ae64-4639-a0e8-a4c51aedf0a0"
-    },
-    "_type": 0,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": true,
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_atlas": null
   },
   {
     "__type__": "2b921y+vjdBXp8hq+ytxbGe",
@@ -313,13 +287,13 @@
     "exitEvenList": [],
     "stayEvenList": [
       {
+        "__id__": 8
+      },
+      {
         "__id__": 9
       },
       {
         "__id__": 10
-      },
-      {
-        "__id__": 11
       }
     ]
   },
@@ -348,7 +322,7 @@
     },
     "component": "Fraction",
     "handler": "scoreUp",
-    "customEventData": "5"
+    "customEventData": "1"
   },
   {
     "__type__": "05f63v6dzxO9L5xdwhPpDMx",
@@ -367,7 +341,7 @@
       "__id__": 1
     },
     "_enabled": true,
-    "value": 3
+    "value": 1
   },
   {
     "__type__": "0ee7cVWgmdBFI3HkcRf5L0R",
@@ -389,6 +363,32 @@
       "__id__": 1
     },
     "_enabled": true
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_spriteFrame": {
+      "__uuid__": "203a18fc-efdf-42bd-9e57-98d5c67bde54"
+    },
+    "_type": 0,
+    "_sizeMode": 0,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_atlas": null
   },
   {
     "__type__": "cc.PrefabInfo",

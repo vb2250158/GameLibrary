@@ -1447,7 +1447,7 @@
       "__id__": 30
     },
     "_enabled": true,
-    "timer": 60,
+    "timer": 30,
     "_timed": 0,
     "evenList": [
       {

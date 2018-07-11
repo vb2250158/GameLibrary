@@ -69,7 +69,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 50,
+      "width": 38,
       "height": 50
     },
     "_rotationX": 0,
@@ -78,7 +78,7 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -97,
+      "x": -103,
       "y": -288
     },
     "_skewX": 0,
@@ -163,7 +163,7 @@
     "_autoRemoveOnFinish": true,
     "_totalParticles": 1000,
     "_duration": -1,
-    "_emissionRate": 5000,
+    "_emissionRate": 200,
     "_life": 0.2,
     "_lifeVar": 0,
     "_startColor": {
@@ -254,9 +254,9 @@
     "node": {
       "__id__": 1
     },
-    "_enabled": false,
+    "_enabled": true,
     "_spriteFrame": {
-      "__uuid__": "7ffdcf54-ae64-4639-a0e8-a4c51aedf0a0"
+      "__uuid__": "ac934907-0c6f-4f35-afff-fb0556f76e49"
     },
     "_type": 0,
     "_sizeMode": 0,
