@@ -61,13 +61,33 @@ cc.Class({
             }
         }
 
-    },setNumberByGlobalVariable() {
+    },
+    setNumberByGlobalVariable() {
 
         for (let index = 0; index < arguments.length; index++) {
             const element = arguments[index];
 
             if (typeof (element) == "string") {
                 this.value = director[element];
+                if (this.value <= 0) {
+                    //销毁对象
+                    this.node.destroy();
+                }
+                return;
+            }
+        }
+    },
+    /**
+     * 射击游戏物体生命公式
+     */
+    setNumberByGlobalTime() {
+
+        for (let index = 0; index < arguments.length; index++) {
+            const element = arguments[index];
+
+            if (typeof (element) == "string") {
+                let gameTime = director.gameFraction.liveTimer;
+                this.value = parseInt((gameTime * cc.random0To1() / 20) + (gameTime * cc.random0To1() / 10)) + 1;
                 if (this.value <= 0) {
                     //销毁对象
                     this.node.destroy();

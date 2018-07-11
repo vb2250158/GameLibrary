@@ -67,7 +67,10 @@ cc.Class({
                 return;
             }
         }
+        
     }
-
+    ,nodeDestroy(){
+        this.node.destroy();
+    }
     // update (dt) {},
 });

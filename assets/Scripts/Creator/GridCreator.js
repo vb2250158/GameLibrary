@@ -70,7 +70,8 @@ cc.Class({
                         newNode.x = -(newNode.parent.width / 2) + x * newNode.width + self._offset.x;
                         newNode.y = y * newNode.height + self._offset.y;
 
-
+                        newNode.x += newNode.width / 2
+                        newNode.y += newNode.height / 2
                         //加入数组
                         self._itemList.push(newNode);
                         break;
