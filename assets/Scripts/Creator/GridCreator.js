@@ -67,11 +67,11 @@ cc.Class({
                         newNode.width = self.gridSize.x;
                         newNode.height = self.gridSize.y;
                         //初始化位置
-                        newNode.x = -(newNode.parent.width / 2) + x * newNode.width + self._offset.x;
-                        newNode.y = y * newNode.height + self._offset.y;
+                        newNode.x = -(newNode.parent.width / 2) + x * self.gridSize.x + self._offset.x;
+                        newNode.y = y * self.gridSize.y + self._offset.y;
 
-                        newNode.x += newNode.width / 2
-                        newNode.y += newNode.height / 2
+                        newNode.x += newNode.width / 2;
+                        newNode.y += newNode.height / 2;
                         //加入数组
                         self._itemList.push(newNode);
                         break;
@@ -85,6 +85,32 @@ cc.Class({
 
 
 
-    }
+    },
+    /**
+  * 在格子组中构建一个对象
+  * @param {*} itemObject 要构建的物体
+  * @param {*} x x的位置 第几行
+  * @param {*} y y的位置 第几列
+  */
+    CreatorItem(itemObject, x = 0, y = 0) {
+        let self = this;
+
+
+        //创建
+        var newNode = cc.instantiate(itemObject);
+        //设置父对象
+        newNode.parent = self.node;
+        //设置节点的高和宽
+        // newNode.width = self.gridSize.x;
+        // newNode.height = self.gridSize.y;
+        //初始化位置
+        newNode.x = -(newNode.parent.width / 2) + x * self.gridSize.x + self._offset.x;
+        newNode.y = y * self.gridSize.y + self._offset.y;
+
+        newNode.x += self.gridSize.x / 2;
+        newNode.y += self.gridSize.y / 2;
+        return newNode;
+        //     console.log(itemObject, newNode.x, newNode.y);
+    },
     // update (dt) {},
 });

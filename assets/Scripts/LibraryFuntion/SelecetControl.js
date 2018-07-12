@@ -37,8 +37,8 @@ cc.Class({
         console.log(this.node.name);
         director._selectObject = this.node;
     },
-    addX() {
-
+    addX(value) {
+        director._selectObject.x += parseInt(value);
     },
     /**
      * 添加Y位移

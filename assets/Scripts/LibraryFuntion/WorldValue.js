@@ -1,4 +1,6 @@
-
+/**
+ * 修改全局变量的组件
+ */
 cc.Class({
     extends: cc.Component,
 
@@ -22,6 +24,7 @@ cc.Class({
                 return;
             }
         }
+       
     }
     // update (dt) {},
 });
