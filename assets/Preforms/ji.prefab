@@ -106,7 +106,7 @@
   },
   {
     "__type__": "Item",
-    "probability": 50,
+    "probability": 80,
     "itemObject": {
       "__uuid__": "96cdcd13-375a-4929-a512-af68885cbf8e"
     }
