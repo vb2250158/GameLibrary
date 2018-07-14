@@ -27,7 +27,8 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        tagetTage: 0
+      
+        lineCreator: require("LineCreator")
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -41,8 +42,9 @@ cc.Class({
 
 
         other.node.destroy();
-
-
+        
+        //加入对象池
+     //   this.lineCreator.itemList.put(other.node);
 
     },
     // update (dt) {},

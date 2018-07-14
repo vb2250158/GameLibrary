@@ -3,7 +3,7 @@ cc.Class({
 
     properties: {
         preformList: [cc.Prefab],
-        itemList: [cc.Node],
+        itemList: cc.NodePool,
         // foo: {
         //     // ATTRIBUTES:
         //     default: null,        // The default value will be used only when the component attaching
@@ -28,7 +28,7 @@ cc.Class({
          * 深度层级调整
          */
         zOpen: true,
-        _theZSize:0
+        _theZSize: 0
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -36,6 +36,7 @@ cc.Class({
     // onLoad () {},
 
     start() {
+        this.itemList = new cc.NodePool();
     },
     /**
      * 构建一组对象
@@ -46,8 +47,21 @@ cc.Class({
         let self = this;
         for (let index = 0; index < indexs.length; index++) {
 
-            //创建
-            var newNode = cc.instantiate(self.preformList[indexs[index]]);
+            let newNode = null;
+            /**
+             * 尝试从对象池中获取
+             */
+            // if (self.itemList.size() > 0) { // 通过 size 接口判断对象池中是否有空闲的对象
+            //     newNode = self.itemList.get();
+            // } else { 
+                // 如果没有空闲对象，也就是对象池中备用对象不够时，我们就用 cc.instantiate 重新创建
+                // 创建
+                newNode = cc.instantiate(self.preformList[indexs[index]]);
+            // }
+            // if (newNode.getComponent('StartEvent')) {
+            //     newNode.getComponent('StartEvent').start();
+            // }
+           
             //设置父对象
             newNode.parent = self.node;
             // 设置节点的X和Y
@@ -59,9 +73,8 @@ cc.Class({
             if (this.zOpen) {
                 newNode.zIndex = self._theZSize--;
             }
-            
-            //加入数组
-            self.itemList.push(newNode);
+
+
         }
         self._lineNumber++;
 

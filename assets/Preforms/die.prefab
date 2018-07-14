@@ -219,13 +219,28 @@
       },
       {
         "__type__": "cc.Vec2",
-        "x": 30,
-        "y": 53
+        "x": 31.9,
+        "y": 18.9
       },
       {
         "__type__": "cc.Vec2",
-        "x": -25,
-        "y": 52
+        "x": 43.6,
+        "y": 24.9
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": 43.5,
+        "y": 49.2
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": -42.2,
+        "y": 45.3
+      },
+      {
+        "__type__": "cc.Vec2",
+        "x": -42.9,
+        "y": 20.8
       }
     ]
   },
@@ -299,9 +314,7 @@
       "__id__": 1
     },
     "_enabled": true,
-    "_spriteFrame": {
-      "__uuid__": "c1a62fcf-3180-4f22-80b8-c60aaaffd35e"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_sizeMode": 1,
     "_fillType": 0,

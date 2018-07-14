@@ -64,5 +64,6 @@ cc.Class({
             element.emit([element.customEventData, other]);
         }
     },
+  //  onDestroy
     // update (dt) {},
 });

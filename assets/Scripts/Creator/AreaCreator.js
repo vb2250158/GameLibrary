@@ -17,8 +17,8 @@ cc.Class({
 
     // onLoad () {},
 
-    start() {
-        
+    start: function () {
+
     },
     addNumber(addValue) {
         this.number += addValue;
