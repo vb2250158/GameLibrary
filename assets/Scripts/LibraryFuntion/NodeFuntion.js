@@ -54,6 +54,13 @@ cc.Class({
                 return;
             }
         }
+    },
+    switchNode() {
+        if (this.node.active) {
+            this.node.active = false;
+        } else {
+            this.node.active = true;
+        }
     }
 
     // update (dt) {},

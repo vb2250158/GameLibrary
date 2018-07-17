@@ -35,7 +35,7 @@ cc.Class({
             const element = arguments[index];
             if (typeof (element) == "string") {
               //  consloe.log(typeof (element) );
-                console.log(typeof (element) );
+        
                 director.scoreUp(parseInt(element));
                 return;
             }

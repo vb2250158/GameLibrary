@@ -22,7 +22,7 @@ cc.Class({
         let value = this.node.getComponent(this.cmponentNmae)[this.valueName];
         value.x = (cc.random0To1() * (this.x.y - this.x.x)) + this.x.x;
         value.y = (cc.random0To1() * (this.y.y - this.y.x)) + this.y.x;
-
        
-    }
+    },
+
 });

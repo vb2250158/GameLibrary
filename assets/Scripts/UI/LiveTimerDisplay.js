@@ -1,12 +1,7 @@
-// Learn cc.Class:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/class.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/class.html
-// Learn Attribute:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/reference/attributes.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - [Chinese] http://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
-//  - [English] http://www.cocos2d-x.org/docs/creator/en/scripting/life-cycle-callbacks.html
+
+var TimeUnit = cc.Enum({
+    not: 0, M: 1, S: 2, MM: 3
+});
 
 cc.Class({
     extends: cc.Component,
@@ -27,38 +22,59 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-        _liveTimerUI:cc.Label
+        _liveTimerUI: cc.Label,
+        onlyLoad: {
+            default: TimeUnit.not,
+            type: cc.Enum(TimeUnit)
+        }
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
 
-    start () {
-        this._liveTimerUI=this.node.getComponent(cc.Label);
+    start() {
+        this._liveTimerUI = this.node.getComponent(cc.Label);
     },
-    upDateUI(){
-        let timerText= "";
+    upDateUI() {
+        let timerText = "";
         let dotIndex = -1;
         //分，秒，毫秒
-        let m="",s="",mm="";
-        timerText=director.gameFraction.liveTimer+"";
-       
-        m=parseInt(director.gameFraction.liveTimer/60)+"";
-        s= parseInt(director.gameFraction.liveTimer%60)+"";
-        dotIndex=timerText.indexOf('.');
-     
-        if (dotIndex!=-1) {          
-            mm= timerText.slice(dotIndex+1,dotIndex+3);
+        let m = "", s = "", mm = "";
+        timerText = director.gameFraction.liveTimer + "";
+
+        m = parseInt(director.gameFraction.liveTimer / 60) + "";
+        s = parseInt(director.gameFraction.liveTimer % 60) + "";
+        dotIndex = timerText.indexOf('.');
+
+        if (dotIndex != -1) {
+            mm = timerText.slice(dotIndex + 1, dotIndex + 3);
         }
         //补零
-        if(s.length<2){
-            s='0'+s;
+        if (s.length < 2) {
+            s = '0' + s;
         }
-        if(mm.length<2){
-            mm='0'+mm;
+        if (mm.length < 2) {
+            mm = '0' + mm;
         }
-        this._liveTimerUI.string = m+":"+s+"."+mm;
+        switch (this.onlyLoad) {
+            case TimeUnit.not:
+                this._liveTimerUI.string = m + ":" + s + "." + mm;
+                break;
+            case TimeUnit.M:
+                this._liveTimerUI.string = m;
+                break;
+            case TimeUnit.S:
+                this._liveTimerUI.string = s;
+                break;
+            case TimeUnit.MM:
+                this._liveTimerUI.string = mm;
+                break;
+            default:
+                break;
+        }
+
+
     }
     // update (dt) {},
 });

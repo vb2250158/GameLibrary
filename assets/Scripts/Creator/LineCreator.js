@@ -48,20 +48,28 @@ cc.Class({
         for (let index = 0; index < indexs.length; index++) {
 
             let newNode = null;
-            /**
-             * 尝试从对象池中获取
-             */
-            // if (self.itemList.size() > 0) { // 通过 size 接口判断对象池中是否有空闲的对象
-            //     newNode = self.itemList.get();
-            // } else { 
-                // 如果没有空闲对象，也就是对象池中备用对象不够时，我们就用 cc.instantiate 重新创建
-                // 创建
+
+            if (indexs[index] == 1) {
+                /**
+                * 尝试从对象池中获取
+                */
+                if (self.itemList.size() > 0) { // 通过 size 接口判断对象池中是否有空闲的对象
+                    newNode = self.itemList.get();
+               //     console.log("从对象池中获取");
+                } else {
+                //    console.log("直接创建");
+                    // 如果没有空闲对象，也就是对象池中备用对象不够时，我们就用 cc.instantiate 重新创建
+                    // 创建
+                    newNode = cc.instantiate(self.preformList[indexs[index]]);
+                }   
+            }else{
+              
                 newNode = cc.instantiate(self.preformList[indexs[index]]);
-            // }
-            // if (newNode.getComponent('StartEvent')) {
-            //     newNode.getComponent('StartEvent').start();
-            // }
+            }
+
            
+
+
             //设置父对象
             newNode.parent = self.node;
             // 设置节点的X和Y

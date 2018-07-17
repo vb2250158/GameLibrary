@@ -27,7 +27,7 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-      
+
         lineCreator: require("LineCreator")
     },
 
@@ -41,11 +41,16 @@ cc.Class({
     onCollisionEnter: function (other) {
 
 
-        other.node.destroy();
-        
-        //加入对象池
-     //   this.lineCreator.itemList.put(other.node);
+    //    console.log(other.node.name);
+        if (other.node.name == "die") {
+            //加入对象池
+            this.lineCreator.itemList.put(other.node);
+        } else {
+            other.node.destroy();
+        }
+
 
     },
+  //  onDestroy
     // update (dt) {},
 });

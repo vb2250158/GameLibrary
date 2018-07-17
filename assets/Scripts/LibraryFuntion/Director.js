@@ -95,9 +95,9 @@ cc.Class({
             this.gameFraction.liveTimer += dt;
         }
         //倒计时结束游戏结束
-        if (this.gameFraction.liveTimer>=this.endTimer) {
-            this.GameEnd();
-        }
+        // if (this.gameFraction.liveTimer>=this.endTimer) {
+        //     this.GameEnd();
+        // }
     },
     /**
      * 分数上升

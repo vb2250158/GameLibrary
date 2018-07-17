@@ -30,8 +30,9 @@ cc.Class({
         /**
          * 道路扩展
          */
-        _roleUpSize: 1
+        _roleUpSize: 1,
 
+        _timeout: null
 
     },
 
@@ -45,10 +46,17 @@ cc.Class({
         this.theNumber = this.awakeRoad(this.lineLength, this.roadNumber, function (nu) {
             self._nowPosis.push(nu);
         });
-        setTimeout(function (params) {
-            self.roadUp();
+        self._timeout = setTimeout(function (params) {
+            console.log(self._nowPosis);
+            for (let index = 0; index < 3; index++) {
+                self._nowPosis.push(self._nowPosis[0]);
+            }
+
             self._roleUpSize = 0;
         }, 30000);
+    },
+    onDestroy() {
+        clearTimeout(self._timeout);
     },
     createNextLine() {
         //道路扩展
@@ -106,19 +114,7 @@ cc.Class({
         }
         return awakeNumber;
     },
-    /**
-     * 道路数变化
-     */
-    roadUp() {
-        for (let index = 0; index < 3; index++) {
-            this._nowPosis.push(this._nowPosis[0]);
-        }
 
-
-
-        //   console.log("添加树");
-
-    },
     /**
      * 随机生成下一行
      * 0是路
