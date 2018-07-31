@@ -54,6 +54,12 @@ cc.Class({
                 return;
             }
         }
+    },
+    nodeDestroy() {
+        this.node.destroy();
+    },
+    active() {
+        this.node.active = true;
     }
 
     // update (dt) {},

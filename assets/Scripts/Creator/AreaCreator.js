@@ -10,7 +10,8 @@ cc.Class({
         randomRange: cc.Vec2,
         number: 3,
         _offset: cc.Vec2,
-
+        upParent: false,
+        modifyTheIndex: 0
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -61,9 +62,12 @@ cc.Class({
                     var newNode = cc.instantiate(element.itemObject);
                     //设置父对象
                     newNode.parent = self.node;
+                    if (self.upParent) {
+                        newNode.parent = newNode.parent.parent;
+                    }
                     //初始化位置
-                    newNode.x = cc.randomMinus1To1() * self.randomRange.x + self._offset.x;
-                    newNode.y = cc.randomMinus1To1() * self.randomRange.y + self._offset.y;
+                    newNode.x = cc.randomMinus1To1() * self.randomRange.x + self._offset.x + this.node.x;
+                    newNode.y = cc.randomMinus1To1() * self.randomRange.y + self._offset.y + this.node.y;
 
                     break;
                 }
@@ -72,6 +76,28 @@ cc.Class({
         }
 
 
+
+    },
+    setModifyTheIndex() {
+        for (let index = 0; index < arguments.length; index++) {
+            const element = arguments[index];
+
+            if (typeof (element) == "string") {
+                this.modifyTheIndex = parseInt(element);
+                return;
+            }
+        }
+
+    },
+    addProbability() {
+        for (let index = 0; index < arguments.length; index++) {
+            const element = arguments[index];
+
+            if (typeof (element) == "string") {
+                this.preformList[this.modifyTheIndex].probability += parseInt(element);
+                return;
+            }
+        }
 
     }
     // update (dt) {},

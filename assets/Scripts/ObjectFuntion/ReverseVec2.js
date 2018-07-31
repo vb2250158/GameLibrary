@@ -18,9 +18,7 @@ cc.Class({
 
     },
     upSet() {
-
         let value = this.node.getComponent(this.cmponentNmae)[this.valueName];
-        
         if (this.X) {
             value.x = -value.x;
         }

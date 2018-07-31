@@ -61,6 +61,7 @@ cc.Class({
     onLoad() {
         window.director = this;
         cc.director.getCollisionManager().enabled = true;
+     //  cc.director.getCollisionManager().enabledDebugDraw = true;
         cc.director.getPhysicsManager().enabled = this.Physics;
     },
 
@@ -95,9 +96,7 @@ cc.Class({
             this.gameFraction.liveTimer += dt;
         }
         //倒计时结束游戏结束
-        if (this.gameFraction.liveTimer>=this.endTimer) {
-            this.GameEnd();
-        }
+
     },
     /**
      * 分数上升

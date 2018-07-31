@@ -28,7 +28,7 @@
   "renderMode": "0",
   "startScene": "00f4eee5-d907-49d8-b303-e575da1b99e5",
   "title": "GameLibrary",
-  "webOrientation": "auto",
+  "webOrientation": "portrait",
   "wechatgame": {
     "REMOTE_SERVER_ROOT": "",
     "appid": "wx9450992bcfd1c16a",

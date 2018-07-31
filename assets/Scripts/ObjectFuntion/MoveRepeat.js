@@ -21,6 +21,9 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
+        ,
+        _rate: 1,
+        _upSpeed: 0
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -32,15 +35,15 @@ cc.Class({
     },
     update(dt) {
         let self = this;
-       // self.node.position = self.node.position.add(new cc.Vec2(self.speed.x * dt, self.speed.y * dt));   
-       self.node.x += self.speed.x * dt;
-       self.node.y += self.speed.y * dt;
+        // self.node.position = self.node.position.add(new cc.Vec2(self.speed.x * dt, self.speed.y * dt));   
+        self.node.x += self.speed.x * dt * self._rate + self.speed.normalize().mul(self._upSpeed).x*dt  ;
+        self.node.y += self.speed.y * dt * self._rate + self.speed.normalize().mul(self._upSpeed).x*dt;
     },
-    addXSpeed(ev,value){
-        this.speed.x +=  parseInt( value);
+    addXSpeed(ev, value) {
+        this.speed.x += parseInt(value);
     },
-    addYSpeed(ev,value){
-        
-        this.speed.y += parseInt( value);
+    addYSpeed(ev, value) {
+
+        this.speed.y += parseInt(value);
     }
 });

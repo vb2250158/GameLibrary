@@ -24,6 +24,7 @@ cc.Class({
         let self = this;
         self._previousPosition = self.node.position;
         self.node.on('position-changed', function (ev) {
+            
             let mag = self.node.position.sub(self._previousPosition).mag();
             self._currentDistance -= mag;
             //   console.log(mag);

@@ -52,17 +52,20 @@ cc.Class({
    
     onCollisionExit: function (other) {
         let self=this;
+        if (self.targetTag == other.tag) {
         for (let index = 0; index < self.exitEvenList.length; index++) {
             const element = self.exitEvenList[index];
             element.emit([element.customEventData,other]);
-        }
+        }}
     },
     onCollisionStay: function (other) {
         let self=this;
+           if (self.targetTag == other.tag) {
         for (let index = 0; index < self.stayEvenList.length; index++) {
             const element = self.stayEvenList[index];
             element.emit([element.customEventData,other]);
         }
+           }
     },
     // update (dt) {},
 });
