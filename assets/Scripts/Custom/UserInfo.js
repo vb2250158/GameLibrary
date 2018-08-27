@@ -1,93 +1,101 @@
 
-cc.Class({
-    extends: cc.Component,
 
-    properties: {
-        // foo: {
-        //     // ATTRIBUTES:
-        //     default: null,        // The default value will be used only when the component attaching
-        //                           // to a node for the first time
-        //     type: cc.SpriteFrame, // optional, default is typeof default
-        //     serializable: true,   // optional, default is true
-        // },
-        // bar: {
-        //     get () {
-        //         return this._bar;
-        //     },
-        //     set (value) {
-        //         this._bar = value;
-        //     }
-        // },
-    },
-
-    // LIFE-CYCLE CALLBACKS:
-
-    onLoad() {
-        // var link = location.href;
-        // let self = this;
-        // $.ajax({
-        //     url: "your_url",//后台给你提供的接口
-        //     type: "GET",
-        //     data: { "url": link },
-        //     async: true,
-        //     dataType: "json",
-        //     success: function (msg) {
-        //         msg.ticket
-        //         let data = {
-        //             configMap: {
-        //                 appId: "wx2b8656105572063a",
-        //                 timestamp: 2000,
-        //                 nonceStr: "喵",
-        //                 signature: "喵喵喵"
-        //             }
-        //         }
-        //         self.config(data);
-        //     },
-
-        // });
-        //window.wx = require("jweixin-1.2.0");
-
-
-
-        //  window.location = "www.baidu.com";
-    },
-
-    start() {
-
-    },
-
-
-    config(data) {
-        wx.config({
-            debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来
-            appId: data.configMap.appId, // 必填，公众号的唯一标识
-            timestamp: data.configMap.timestamp, // 必填，生成签名的时间戳
-            nonceStr: data.configMap.nonceStr, // 必填，生成签名的随机串
-            signature: data.configMap.signature,// 必填，签名，见附录1
-            jsApiList: [
-                "onMenuShareTimeline",//分享朋友圈接口
-                "onMenuShareAppMessage"//分享给朋友接口
-            ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-        });
-        wx.ready(function () {
-            alert("emmm");
-            // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
-        });
-        wx.error(function (res) {
-            alert("错误:" + res);
-            // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
-        });
-        wx.onMenuShareAppMessage({
-            title: '喵喵', // 分享标题
-            desc: '9999', // 分享描述
-            link: 'www.baidu.com', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-            //   imgUrl: '', // 分享图标
-            //  type: '', // 分享类型,music、video或link，不填默认为link
-            // dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-            success: function () {
-                // 用户点击了分享后执行的回调函数
-            }
-        });
+var jq = require("./jquery-3.3.1.min");
+const key = "jdvip11@";
+/**
+* 字符串解密
+*/
+function decrypt(str) {
+    if (str == "") return "";
+    let pwd = escape(key);
+    if (str == null || str.length < 8) {
+        // alert("A salt value could not be extracted from the encrypted message because it's length is too short. The message cannot be decrypted.");
+        return "";
     }
-    // update (dt) {},
-});
+    if (pwd == null || pwd.length <= 0) {
+        // alert("Please enter a password with which to decrypt the message.");
+        return "";
+    }
+    let prand = "";
+    for (let I = 0; I < pwd.length; I++) {
+        prand += pwd.charCodeAt(I).toString();
+    }
+    let sPos = Math.floor(prand.length / 5);
+    let mult = parseInt(prand.charAt(sPos) + prand.charAt(sPos * 2) + prand.charAt(sPos * 3) + prand.charAt(sPos * 4) + prand.charAt(sPos * 5));
+    let incr = Math.round(pwd.length / 2);
+    let modu = Math.pow(2, 31) - 1;
+    let salt = parseInt(str.substring(str.length - 8, str.length), 16);
+    str = str.substring(0, str.length - 8);
+    prand += salt;
+    while (prand.length > 10) {
+        prand = (parseInt(prand.substring(0, 10)) + parseInt(prand.substring(10, prand.length))).toString();
+    }
+    prand = (mult * prand + incr) % modu;
+    let enc_chr = "";
+    let enc_str = "";
+    for (let I = 0; I < str.length; I += 2) {
+        enc_chr = parseInt(parseInt(str.substring(I, I + 2), 16) ^ Math.floor((prand / modu) * 255));
+        enc_str += String.fromCharCode(enc_chr);
+        prand = (mult * prand + incr) % modu;
+    }
+    return unescape(enc_str);
+}
+/**
+* 用来读取特定的cookie值。
+*/
+function getCookie(name) {
+    let arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+    if (arr = document.cookie.match(reg)) {
+        return unescape(arr[2]);
+    }
+    else {
+        return null;
+    }
+}
+
+function setCookie(name, value) {
+    let Days = 30;
+    let exp = new Date();
+    exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+    document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+}
+function getPar(par) {
+    //获取当前URL
+    let local_url = document.location.href;
+    //获取要取得的get参数位置
+    let get = local_url.indexOf(par + "=");
+    if (get == -1) {
+        return false;
+    }
+    //截取字符串
+    let get_par = local_url.slice(par.length + get + 1);
+    //判断截取后的字符串是否还有其他get参数
+    let nextPar = get_par.indexOf("&");
+    if (nextPar != -1) {
+        get_par = get_par.slice(0, nextPar);
+    }
+    return get_par;
+}
+/**
+ * 用户数据
+ */
+let UserData = function () {
+    this.phone = "";
+    this.score = 0;
+    this.game_name = "";
+    this.live_time = "";
+    this.play_number = 0;
+    this.gold = 0;
+    this.token = "";
+
+}
+
+module.exports= {
+    user:new UserData(),
+    InitGame(){
+        this.user.token = decrypt(this.getPar("token"));    
+        window.user=this.user;
+
+    },
+    
+}

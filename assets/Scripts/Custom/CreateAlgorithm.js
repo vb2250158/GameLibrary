@@ -59,10 +59,12 @@ cc.Class({
         clearTimeout(self._timeout);
     },
     createNextLine() {
-        //道路扩展
+        //道路扩展,一道两宽
         if (this._roleUpSize > 0) {
+            //遍历当前道路点
             for (let index = 0; index < this._nowPosis.length; index++) {
                 const element = this._nowPosis[index];
+                //查看是否是最左或最右
                 if (element + 1 < this.theNumber.length) {
                     this.theNumber[element + 1] = 0;
                 } else {
