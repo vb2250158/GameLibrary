@@ -23,10 +23,10 @@ cc.Class({
         debugText: cc.Label,
 
     },
-   
     onLoad() {
         UserInfo.InitGame();
-      
+        window.UserInfo=UserInfo;
+      this.  debugText.string = JSON.stringify(user,null,1);
     },
 
     start() {

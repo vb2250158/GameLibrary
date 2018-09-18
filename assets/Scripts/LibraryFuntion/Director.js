@@ -42,17 +42,17 @@ cc.Class({
         /**
          * 是否开启物理系统
          */
-        Physics:true,
+        Physics: true,
         /**
          * 游戏结束倒计时
          */
-        endTimer:300,
+        endTimer: 300,
 
-        _selectObject:null,
+        _selectObject: null,
 
 
-        
-        
+
+        tip: cc.Label
 
     },
 
@@ -80,15 +80,30 @@ cc.Class({
 
     },
     /**
+     *  重新开始游戏
+     * @param {*} sceneName 
+     */
+    ReStartGame() {
+        if (user.play_number > 0) {
+            cc.director.loadScene("MainScene");
+        } else {
+            let tip = this.tip;
+            tip.node.active = true;
+            setTimeout(() => {
+                tip.node.active = false;
+            }, 2000);
+        }
+    },
+    /**
      * 游戏结束
      */
     GameEnd() {
         let self = this;
         if (!self.isGameEnd) {
             self.isGameEnd = true;
+            console.log(self.gameFraction);
             director.node.emit("GameEnd", self.gameFraction);
         }
-     
     },
     update(dt) {
         if (!this.isGameEnd) {
@@ -105,8 +120,11 @@ cc.Class({
      */
     scoreUp(score) {
         if (!this.isGameEnd) {
-        //  console.log(score);
+            //  console.log(score);
             this.gameFraction.score += parseInt(score);
         }
+    },
+    share(){
+        UserInfo.ExitGame();
     }
 });

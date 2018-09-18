@@ -27,35 +27,18 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-
-        //      lineCreator: require("LineCreator")
-        filter: 9
+        numberUI:cc.Label
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
 
-    start() {
+    start () {
 
     },
-    onCollisionEnter: function (other) {
-        if (this.filter != other.tag) {
-            other.node.destroy();
-            
-        }
-
-        //new  cc.Node().destroy
-        //    console.log(other.node.name);
-        // if (other.node.name == "die") {
-        //     //加入对象池
-        //     this.lineCreator.itemList.put(other.node);
-        // } else {
-        //     other.node.destroy();
-        // }
-
-
-    },
-    //  onDestroy
+    display(){  
+        this.numberUI.string=user.play_number;
+    }
     // update (dt) {},
 });

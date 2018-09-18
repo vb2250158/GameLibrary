@@ -2092,7 +2092,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Label",
+    "_name": "Debug",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -2181,7 +2181,7 @@
     "_fitHeight": false
   },
   {
-    "__type__": "d3aedNd5yRB0qv7rGfvJ16L",
+    "__type__": "b85b0aAFoVMHJ2oVif6MgzO",
     "_name": "",
     "_objFlags": 0,
     "node": {

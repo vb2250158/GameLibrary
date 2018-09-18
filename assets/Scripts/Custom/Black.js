@@ -1,8 +1,8 @@
+//黑色的鸡效果
 cc.Class({
     extends: cc.Component,
 
     properties: {
-
         // foo: {
         //     // ATTRIBUTES:
         //     default: null,        // The default value will be used only when the component attaching
@@ -18,19 +18,24 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
+        areaCreatorList:[require("AreaCreator")],
+     
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
-
-    // start () {
-       
-    // },
-    Log(msg,data){
-        console.log(msg);
-        console.log("卧槽");
-      
+     onLoad () {
+        
+     },
+     start (){
+        window.bk=this;
     },
-    // update (dt) { },
+    build () {
+        //  console.log(this);
+        this.areaCreatorList.forEach(element => {
+            element.build();
+        });
+    },
+
+    // update (dt) {},
 });

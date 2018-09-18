@@ -1,7 +1,4 @@
 
-
-var jq = require("./jquery-3.3.1.min");
-const key = "jdvip11@";
 /**
 * 字符串解密
 */
@@ -83,19 +80,58 @@ let UserData = function () {
     this.phone = "";
     this.score = 0;
     this.game_name = "";
-    this.live_time = "";
+    this.live_time = 0;
     this.play_number = 0;
     this.gold = 0;
     this.token = "";
-
+    /**
+     * 场次
+     */
+    this.sessionId = 8;
 }
 
-module.exports= {
-    user:new UserData(),
-    InitGame(){
-        this.user.token = decrypt(this.getPar("token"));    
-        window.user=this.user;
-
+module.exports = {
+    user: new UserData(),
+    InitGame() {
+        this.user.token = decrypt(getPar("token"));
+        window.user = this.user;
     },
-    
+    UpLoadScore(callFuntion) {
+        let APPKEY = "f7bcaba4be1e4d4e8a269866e9805711";
+        let APPSECRET = "e8876ac30e28490c872bec16a01aabf8";
+        let key = "jdvip11@";
+        let jts = new Date().getTime();
+        // let tData = {
+        //     appkey: APPKEY,
+        //     sign: hex_md5(APPSECRET + jts + key),
+        //     sessionId: user.sessionId,
+        //     gold: user.gold,
+        //     persistTime: user.live_time,
+        // };
+        let hData= {
+            token: "6914d3c478da493aaec2615490133b3d",
+            ts: jts,
+            'Access-Control-Allow-Origin': '*',
+            "content-type":"application/x-www-form-urlencoded"
+        };
+        var params = new URLSearchParams();
+        params.append('appkey', APPKEY);
+        params.append('sign', hex_md5(APPSECRET + jts + key));
+        params.append('sessionId', user.sessionId);
+        params.append('gold', user.gold);
+        params.append('persistTime',  user.live_time);
+        // console.log(tData,hData);
+        axios.post(
+            "https://api.jdvip.com/v1/game/add",
+            params, 
+            {
+                headers:hData
+            }
+        ).then(function (response) {
+            callFuntion(response.data);
+        });
+    },
+    ExitGame(){
+        window.close();
+    }
 }

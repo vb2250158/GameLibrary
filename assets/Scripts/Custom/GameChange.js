@@ -1,8 +1,11 @@
+/**
+ * 游戏改变，概率控制
+ */
 cc.Class({
+
     extends: cc.Component,
 
     properties: {
-
         // foo: {
         //     // ATTRIBUTES:
         //     default: null,        // The default value will be used only when the component attaching
@@ -18,19 +21,14 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
+        areaCreator: require("AreaCreator"),
+        jibk: cc.Prefab,
+  
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
-
-    // start () {
-       
-    // },
-    Log(msg,data){
-        console.log(msg);
-        console.log("卧槽");
-      
-    },
-    // update (dt) { },
+    bkbuilt() {
+        this.areaCreator.buildObject(this.jibk);
+    }
 });
